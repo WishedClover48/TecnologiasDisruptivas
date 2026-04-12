@@ -1,8 +1,3 @@
-// =============================================================================
-// ROLE: Singleton que controla el avance de días mediante un sistema de puntos.
-//       El tiempo solo avanza cuando se llama SpendTime() — sin countdown real.
-// =============================================================================
-
 using UnityEngine;
 
 public class DayTimeManager : MonoBehaviour

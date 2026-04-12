@@ -14,7 +14,7 @@ namespace DefaultNamespace
 
         [Header("Selected Activities")]
         [SerializeField] private List<ActionData_SO> selectedActivities = new List<ActionData_SO>();
-        GlobalEventSO<ActionData_SO> onActivityApplied;
+        [SerializeField] private GlobalEventSO<ActionData_SO> onActivityApplied;
         
         private DayTimeManager dayTimeManager;
         
