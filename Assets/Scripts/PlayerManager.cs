@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -10,18 +11,21 @@ namespace DefaultNamespace
         [SerializeField] private int currentStress = 0;
         [SerializeField] private int currentFinance = 100;
         [SerializeField] private int currentMoney = 1000;
-        [SerializeField] private int currentTime = 12;
 
         [Header("Selected Activities")]
         [SerializeField] private List<ActionData_SO> selectedActivities = new List<ActionData_SO>();
         GlobalEventSO<ActionData_SO> onActivityApplied;
         
+        private DayTimeManager dayTimeManager;
+        
         public int Health => currentHealth;
         public int Stress => currentStress;
         public int Finance => currentFinance;
         public int Money => currentMoney;
-        public int Time => currentTime;
+        
         public List<ActionData_SO> SelectedActivities => selectedActivities;
+
+        #region  Singelton
 
         public static PlayerManager Instance { get; private set; }
 
@@ -38,9 +42,17 @@ namespace DefaultNamespace
             }
         }
 
+        #endregion
+
+        private void Start()
+        {
+            dayTimeManager=DayTimeManager.Instance;
+        }
+
+
         public bool CanAffordActivity(ActionData_SO actionData)
         {
-            return currentTime >= actionData.TimeCost && currentMoney >= actionData.MoneyCost;
+            return dayTimeManager.RemainingHours >= actionData.TimeCost && currentMoney >= actionData.MoneyCost;
         }
 
         public void ApplyActivity(ActionData_SO actionData)
@@ -52,7 +64,7 @@ namespace DefaultNamespace
             }
 
             // Subtract costs
-            currentTime -= actionData.TimeCost;
+            dayTimeManager.SpendTime(actionData.TimeCost);
             currentMoney -= actionData.MoneyCost;
 
             // Apply effects
@@ -100,7 +112,6 @@ namespace DefaultNamespace
             PlayerPrefs.SetInt("PlayerFinance", currentFinance);
             PlayerPrefs.SetInt("PlayerHealth", currentHealth);
             PlayerPrefs.SetInt("PlayerStress", currentStress);
-            PlayerPrefs.SetInt("PlayerTime", currentTime);
             PlayerPrefs.SetInt("PlayerMoney", currentMoney);
 
             PlayerPrefs.Save();
@@ -130,7 +141,6 @@ namespace DefaultNamespace
             currentFinance = PlayerPrefs.GetInt("PlayerFinance", 100);
             currentHealth = PlayerPrefs.GetInt("PlayerHealth", 100);
             currentStress = PlayerPrefs.GetInt("PlayerStress", 0);
-            currentTime = PlayerPrefs.GetInt("PlayerTime", 480);
             currentMoney = PlayerPrefs.GetInt("PlayerMoney", 1000);
 
             Debug.Log("Selected activities and stats loaded!");
