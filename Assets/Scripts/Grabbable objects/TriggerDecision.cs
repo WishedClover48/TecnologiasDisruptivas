@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TriggerDecision : MonoBehaviour
 {
     [SerializeField] private GrabInteractable _grabInteractable;
+    [SerializeField] private Activity _activity;
 
     [SerializeField] private Canvas _objectCanvas;
     [SerializeField] private Image _progress;
@@ -68,19 +69,25 @@ public class TriggerDecision : MonoBehaviour
         if (_fillDuration <= 0f)
         {
             _progress.fillAmount = 1f;
-            _done = true;
+            FinishedGrabbing();
             yield break;
         }
-
         float elapsed = 0f;
         while (elapsed < _fillDuration)
         {
+
             elapsed += Time.deltaTime;
             _progress.fillAmount = Mathf.Clamp01(elapsed / _fillDuration);
             yield return null;
         }
-
+        FinishedGrabbing();
         _progress.fillAmount = 1f;
         _fillCoroutine = null;
+    }
+
+    private void FinishedGrabbing()
+    {
+        _done = true;
+        _activity.DoActivity();
     }
 }

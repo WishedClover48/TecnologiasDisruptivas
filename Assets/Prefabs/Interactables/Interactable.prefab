@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 3484148922321013576}
   - component: {fileID: 1979386626820641966}
   - component: {fileID: -2600667896553203465}
+  - component: {fileID: 411805288675534384}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
@@ -319,10 +320,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220666425cc66d945a0d5aa63250e7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerDecision
+  _grabInteractable: {fileID: 1979386626820641966}
+  _activity: {fileID: 411805288675534384}
   _objectCanvas: {fileID: 7558898536420388928}
   _progress: {fileID: 6036211770535574713}
-  _grabInteractable: {fileID: 1979386626820641966}
   _fillDuration: 3
+--- !u!114 &411805288675534384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4510089199849586854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e5832663640d643af57f33328b86c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Activity
+  actionData: {fileID: 11400000, guid: 14a7200038dda6146b2504ef266216f3, type: 2}
 --- !u!1 &7713726450165180482
 GameObject:
   m_ObjectHideFlags: 0
