@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 075f4c1b06facd64fbbe1d8671b42812, type: 3}
-  m_Name: Gym
+  m_Name: Do_extra_hour_At_Work
   m_EditorClassIdentifier: Assembly-CSharp::ActivitySO
-  activityName: Gym
+  activityName: Do extra hour At Work
   activityDescription: very nice
   activityFlavorText: cesa chan
-  timeCost: 2
+  timeCost: 3
   moneyCost: 0
-  finance: 0
-  health: 20
-  stress: 20
+  finance: 5
+  health: -5
+  stress: 10

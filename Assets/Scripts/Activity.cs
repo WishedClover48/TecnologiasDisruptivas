@@ -1,12 +1,13 @@
 using UnityEngine;
 using DefaultNamespace;
+using UnityEngine.Serialization;
 
 public class Activity : MonoBehaviour
 {
-    [SerializeField] private ActivitySO activity;
+    [FormerlySerializedAs("activity")] [SerializeField] private ActionData_SO actionData;
 
     
-    public ActivitySO GetActivity() => activity;
+    public ActionData_SO GetActivity() => actionData;
     
 
     [ContextMenu("Do Activity")]
@@ -18,18 +19,18 @@ public class Activity : MonoBehaviour
             return;
         }
 
-        if (activity == null)
+        if (actionData == null)
         {
             Debug.LogError("No ActivitySO assigned to this Activity!");
             return;
         }
-        if (PlayerManager.Instance.CanAffordActivity(activity))
+        if (PlayerManager.Instance.CanAffordActivity(actionData))
         {
-            PlayerManager.Instance.ApplyActivity(activity);
+            PlayerManager.Instance.ApplyActivity(actionData);
         }
         else
         {
-            Debug.LogWarning($"Cannot afford activity: {activity.ActivityName}");
+            Debug.LogWarning($"Cannot afford activity: {actionData.ActivityName}");
         }
     }
 

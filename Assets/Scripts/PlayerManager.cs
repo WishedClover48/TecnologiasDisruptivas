@@ -13,17 +13,16 @@ namespace DefaultNamespace
         [SerializeField] private int currentTime = 12;
 
         [Header("Selected Activities")]
-        [SerializeField] private List<ActivitySO> selectedActivities = new List<ActivitySO>();
-
-        // Properties for accessing stats
+        [SerializeField] private List<ActionData_SO> selectedActivities = new List<ActionData_SO>();
+        GlobalEventSO<ActionData_SO> onActivityApplied;
+        
         public int Health => currentHealth;
         public int Stress => currentStress;
         public int Finance => currentFinance;
         public int Money => currentMoney;
         public int Time => currentTime;
-        public List<ActivitySO> SelectedActivities => selectedActivities;
+        public List<ActionData_SO> SelectedActivities => selectedActivities;
 
-        // Singleton pattern for easy access
         public static PlayerManager Instance { get; private set; }
 
         private void Awake()
@@ -39,48 +38,49 @@ namespace DefaultNamespace
             }
         }
 
-        public bool CanAffordActivity(ActivitySO activity)
+        public bool CanAffordActivity(ActionData_SO actionData)
         {
-            return currentTime >= activity.TimeCost && currentMoney >= activity.MoneyCost;
+            return currentTime >= actionData.TimeCost && currentMoney >= actionData.MoneyCost;
         }
 
-        public void ApplyActivity(ActivitySO activity)
+        public void ApplyActivity(ActionData_SO actionData)
         {
-            if (!CanAffordActivity(activity))
+            if (!CanAffordActivity(actionData))
             {
-                Debug.LogWarning($"Cannot afford activity: {activity.ActivityName}");
+                Debug.LogWarning($"Cannot afford activity: {actionData.ActivityName}");
                 return;
             }
 
             // Subtract costs
-            currentTime -= activity.TimeCost;
-            currentMoney -= activity.MoneyCost;
+            currentTime -= actionData.TimeCost;
+            currentMoney -= actionData.MoneyCost;
 
             // Apply effects
-            currentFinance += activity.Finance;
-            currentHealth += activity.Health;
-            currentStress += activity.Stress;
+            currentFinance += actionData.Finance;
+            currentHealth += actionData.Health;
+            currentStress += actionData.Stress;
 
             // Clamp values to reasonable ranges
             currentHealth = Mathf.Clamp(currentHealth, 0, 100);
             currentStress = Mathf.Clamp(currentStress, 0, 100);
             currentFinance = Mathf.Clamp(currentFinance, 0, 100);
 
-            selectedActivities.Add(activity);
+            selectedActivities.Add(actionData);
 
-            Debug.Log($"Applied activity: {activity.ActivityName}. Stats - Finance: {currentFinance}, Health: {currentHealth}, Stress: {currentStress}");
+            onActivityApplied.RaiseEvent(actionData );
+            Debug.Log($"Applied activity: {actionData.ActivityName}. Stats - Finance: {currentFinance}, Health: {currentHealth}, Stress: {currentStress}");
         }
 
-        public void RemoveActivity(ActivitySO activity)
+        public void RemoveActivity(ActionData_SO actionData)
         {
-            if (!selectedActivities.Contains(activity))
+            if (!selectedActivities.Contains(actionData))
             {
-                Debug.LogWarning($"Activity {activity.ActivityName} was not selected");
+                Debug.LogWarning($"Activity {actionData.ActivityName} was not selected");
                 return;
             }
-            selectedActivities.Remove(activity);
+            selectedActivities.Remove(actionData);
 
-            Debug.Log($"Removed activity: {activity.ActivityName}. Stats - Finance: {currentFinance}, Health: {currentHealth}, Stress: {currentStress}");
+            Debug.Log($"Removed activity: {actionData.ActivityName}");
         }
 
         public void SaveSelectedActivities()//copado pero no se si lo usamos
@@ -118,10 +118,10 @@ namespace DefaultNamespace
                 if (!string.IsNullOrEmpty(activityName))
                 {
                     // You'll need to load the ActivitySO by name from Resources or another method
-                    ActivitySO activity = Resources.Load<ActivitySO>($"Activities/{activityName}");
-                    if (activity != null)
+                    ActionData_SO actionData = Resources.Load<ActionData_SO>($"Activities/{activityName}");
+                    if (actionData != null)
                     {
-                        selectedActivities.Add(activity);
+                        selectedActivities.Add(actionData);
                     }
                 }
             }
