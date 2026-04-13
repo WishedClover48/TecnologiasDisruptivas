@@ -2,36 +2,26 @@ using UnityEngine;
 
 public class DayTimeManager : MonoBehaviour
 {
-    // --- Singleton -----------------------------------------------------------
-
     public static DayTimeManager Instance { get; private set; }
 
-    // --- Inspector: configuración de días ------------------------------------
 
     [Header("Day Configuration")]
     [SerializeField] private int totalDays      = 4;
     [SerializeField] private int minHoursPerDay = 8;
     [SerializeField] private int maxHoursPerDay = 12;
 
-    // --- Inspector: Global Events Output -------------------------------------
 
     [Header("Global Events — Output")]
     [SerializeField] private GlobalEventSO_Int  onDayEnded;
     [SerializeField] private GlobalEventSO_Void onNewDayStarted;
     [SerializeField] private GlobalEventSO_Void onGameEnded;
 
-    // --- Inspector: Global Events Input --------------------------------------
-
     [Header("Global Events — Input")]
     [SerializeField] private GlobalEventSO_ActionData onActionPerformed;
-
-    // --- Estado público ------------------------------------------------------
 
     public int CurrentDay     { get; private set; } = 1;
     public int MaxHoursToday  { get; private set; }
     public int RemainingHours { get; private set; }
-
-    // --- Lifecycle -----------------------------------------------------------
 
     private void Awake()
     {
@@ -54,13 +44,7 @@ public class DayTimeManager : MonoBehaviour
         if (onActionPerformed != null)
             onActionPerformed.OnEventRaised -= OnActionReceived;
     }
-
-    // --- API pública ---------------------------------------------------------
-
-    /// <summary>
-    /// Resta horas al tiempo disponible hoy.
-    /// Si llega a 0 dispara EndDay automáticamente.
-    /// </summary>
+    
     public void SpendTime(int hours)
     {
         RemainingHours -= hours;
@@ -68,8 +52,6 @@ public class DayTimeManager : MonoBehaviour
         if (RemainingHours <= 0)
             EndDay();
     }
-
-    // --- Lógica interna ------------------------------------------------------
 
     private void EndDay()
     {
@@ -110,8 +92,6 @@ public class DayTimeManager : MonoBehaviour
             (minHoursPerDay, maxHoursPerDay) = (maxHoursPerDay, minHoursPerDay);
         }
     }
-
-    // --- Handler del evento --------------------------------------------------
 
     private void OnActionReceived(ActionData_SO action)
     {
