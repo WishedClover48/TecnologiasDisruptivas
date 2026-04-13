@@ -6055,10 +6055,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3068171004366976458, guid: f5243016c0aebf5419063be096e9e03d, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3668923355302737456, guid: f5243016c0aebf5419063be096e9e03d, type: 3}
       propertyPath: m_Name
       value: Interactable_Cube
@@ -6747,10 +6743,6 @@ PrefabInstance:
     - target: {fileID: 5080885892441938733, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: m_Name
       value: Interactable_Cilinder
-      objectReference: {fileID: 0}
-    - target: {fileID: 6844373928644565207, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9053051421791239611, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: actionData
@@ -7560,10 +7552,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 300588980839646850, guid: f59018f90e99b0a418895bbf4c082eb4, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2041572136037795192, guid: f59018f90e99b0a418895bbf4c082eb4, type: 3}
       propertyPath: m_Name
       value: Interactable_Sphere
@@ -11925,8 +11913,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 7628500536401319419, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697823695389415534, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1811110753098722844, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
+    - {fileID: 8697823695389415534, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
+    - {fileID: 7628500536401319419, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
+    - {fileID: 3350550510116270237, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
+    - {fileID: 6346003496525074242, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
+    - {fileID: 7724037739150877061, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 8134593620125699622, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2499be932c024054bba8a876ade28bb7, type: 3}
