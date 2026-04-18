@@ -9,6 +9,7 @@ public class TriggerDecision : MonoBehaviour
     [SerializeField] private Activity _activity;
 
     [SerializeField] private Canvas _objectCanvas;
+    [SerializeField] private Canvas _hoverCanvas;
     [SerializeField] private Image _progress;
     [SerializeField] private float _fillDuration = 2f;
 
@@ -20,7 +21,10 @@ public class TriggerDecision : MonoBehaviour
     private void Start()
     {
         _grabInteractable.WhenStateChanged += ObjectInteraction;
-        _objectCanvas.gameObject.SetActive(false);
+
+        _objectCanvas?.gameObject.SetActive(false);
+        _hoverCanvas.gameObject.SetActive(false);
+
         _done = false;
     }
 
@@ -34,7 +38,8 @@ public class TriggerDecision : MonoBehaviour
     {
         if (args.NewState == InteractableState.Select)
         {
-            _objectCanvas.gameObject.SetActive(true);
+            _objectCanvas?.gameObject.SetActive(true);
+            _hoverCanvas?.gameObject.SetActive(false);
 
             // Start filling
             if (_progress != null)
@@ -48,9 +53,15 @@ public class TriggerDecision : MonoBehaviour
                 _done = false;
             }
         }
+        else if (args.NewState == InteractableState.Hover)
+        {
+            _hoverCanvas?.gameObject.SetActive(true);
+            _objectCanvas?.gameObject.SetActive(false);
+        }
         else
         {
-            _objectCanvas.gameObject.SetActive(false);
+            _objectCanvas?.gameObject.SetActive(false);
+            _hoverCanvas?.gameObject.SetActive(false);
 
             // Stop and reset filling when released
             if (_fillCoroutine != null)
