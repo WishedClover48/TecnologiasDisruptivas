@@ -30,20 +30,20 @@ public class UI_PhoneHistory : MonoBehaviour
     {
         history.Add(action);
         Show(action);
-        index = history.Count;
+        index = history.Count - 1;
         
         if (!gameObject.activeInHierarchy) gameObject.SetActive(true);
     }
 
     public void ShowPrevious()
     {
-        if ( (index - 1) < 0 ) index = 0;
+        if ( (index - 1) < 0 ) index = history.Count - 1;
         
         Show(history[index]);
     }
     public void ShowNext()
     {
-        if ( (index + 1) > history.Count ) index = history.Count;
+        if ( (index + 1) > history.Count -1 ) index = 0;
         
         Show(history[index]);
     }
