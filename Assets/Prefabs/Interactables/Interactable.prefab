@@ -358,6 +358,7 @@ MonoBehaviour:
   _hours: {fileID: 4508325713230341961}
   _health: {fileID: 5353457025160694343}
   _stress: {fileID: 6908856876013980018}
+  _name: {fileID: 4342892333259132112}
 --- !u!1 &7713726450165180482
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8791203050553659505, guid: 236fd77901243384387f50fd281383ef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8791203050553659505, guid: 236fd77901243384387f50fd281383ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -655,6 +656,17 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 6757858600712804476, guid: 236fd77901243384387f50fd281383ef, type: 3}
   m_PrefabInstance: {fileID: 7516356758554637012}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4342892333259132112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6055788126237687300, guid: 236fd77901243384387f50fd281383ef, type: 3}
+  m_PrefabInstance: {fileID: 7516356758554637012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &4508325713230341961 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6259929813056476573, guid: 236fd77901243384387f50fd281383ef, type: 3}

@@ -10,6 +10,7 @@ public class ShowOnCanvas : MonoBehaviour
     [SerializeField] private TMP_Text _hours;
     [SerializeField] private TMP_Text _health;
     [SerializeField] private TMP_Text _stress;
+    [SerializeField] private TMP_Text _name;
 
     private ActionData_SO _actionData;
     private void Awake()
@@ -20,8 +21,9 @@ public class ShowOnCanvas : MonoBehaviour
         _hours.text = TranslateActionDatatoString(_actionData.TimeCost);
         _stress.text = TranslateActionDatatoString(_actionData.Stress);
         _health.text = TranslateActionDatatoString(_actionData.Health);
-
+        _name.text = _actionData.ActivityName;
     }
+
 private string TranslateActionDatatoString(int data)
     {
         int value = data;
