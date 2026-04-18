@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075f4c1b06facd64fbbe1d8671b42812, type: 3}
   m_Name: Do_extra_hour_At_Work
   m_EditorClassIdentifier: Assembly-CSharp::ActivitySO
-  activityName: Do extra hour At Work
+  activityName: Work
   activityDescription: very nice
   activityFlavorText: cesa chan
   timeCost: 3

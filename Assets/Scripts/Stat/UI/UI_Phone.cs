@@ -6,10 +6,20 @@ using UnityEngine.UI;
 
 public class UI_Phone : MonoBehaviour
 {
+    [Serializable] private class InternalUIPhone
+    {
+        public TMP_Text day;
+        public TMP_Text time;
+        public TMP_Text money;
+        public TMP_Text stress;
+        public TMP_Text health;
+        public UI_PhoneHistory history;
+    }
+    
     [SerializeField] private GlobalEventSO_Int onDayEnd;
     [SerializeField] private GlobalEventSO<ActionData_SO> onActivityApplied;
     [Space]
-    [SerializeField] private Internal_UI_Phone @internal;
+    [SerializeField] private InternalUIPhone @internal;
     
     private PlayerManager playerManager;
     private DayTimeManager dayTimeManager;
@@ -34,6 +44,7 @@ public class UI_Phone : MonoBehaviour
     {
         UpdateTime();
         UpdateStats();
+        @internal.history.AddToHistory(action);
     }
 
     private void UpdateDay(int value)
@@ -49,15 +60,5 @@ public class UI_Phone : MonoBehaviour
         @internal.health.text = playerManager.Health.ToString();
         @internal.money.text = playerManager.Money.ToString();
         @internal.stress.text = playerManager.Stress.ToString();
-    }
-
-
-    [Serializable] private class Internal_UI_Phone
-    {
-        public TMP_Text day;
-        public TMP_Text time;
-        public TMP_Text money;
-        public TMP_Text stress;
-        public TMP_Text health; 
     }
 }
