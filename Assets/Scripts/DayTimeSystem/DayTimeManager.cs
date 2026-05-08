@@ -20,6 +20,7 @@ public class DayTimeManager : MonoBehaviour
     [SerializeField] private GlobalEventSO_ActionData onActionPerformed;
 
     public int CurrentDay     { get; private set; } = 1;
+    public int TotalDays      => totalDays;
     public int MaxHoursToday  { get; private set; }
     public int RemainingHours { get; private set; }
 
