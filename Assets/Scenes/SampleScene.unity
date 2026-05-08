@@ -626,6 +626,14 @@ PrefabInstance:
       propertyPath: _exerciseStarter
       value: 
       objectReference: {fileID: 85831117}
+    - target: {fileID: 2593355010380710780, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: _completionHandlers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593355010380710780, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: '_completionHandlers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 85831117}
     - target: {fileID: 2863454958583360962, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.842
@@ -718,6 +726,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6844373928644565207, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7419761169620338582, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -787,7 +799,7 @@ MonoBehaviour:
   _handGrabInteractable: {fileID: 0}
   _uiRoot: {fileID: 810077713}
   _statusText: {fileID: 0}
-  _progressFill: {fileID: 0}
+  _progressFill: {fileID: 1393872049}
   _targetReps: 10
   _requiredHand: 0
   _liftHeight: 0.45
@@ -8199,6 +8211,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 488311955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1393872049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8302013587877055432, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+  m_PrefabInstance: {fileID: 85831098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1394115688
 GameObject:
   m_ObjectHideFlags: 0
