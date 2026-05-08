@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1642163080990743991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2994311030740298293}
+  - component: {fileID: 6031998526366107742}
+  m_Layer: 0
+  m_Name: ExerciseTVGuide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2994311030740298293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642163080990743991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.7, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6031998526366107742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642163080990743991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9629ac738fc6459cb5264fd93eb8c62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _messageText: {fileID: 0}
+  _displayRoot: {fileID: 0}
+  _phases:
+  - StartMessage: Grab the blue dumbbell with your right hand.
+    CounterFormat: '{hand} hand: {reps}/{target} reps'
+    ReleasedMessage: Pick up the {object} with your {hand} hand.
+    WrongHandMessage: Use your {hand} hand for the {object}.
+    Targets:
+    - Dumbbell: {fileID: 0}
+      ObjectName: blue dumbbell
+      RequiredHand: 2
+      TargetReps: 10
+  - StartMessage: Grab the blue dumbbell with your left hand.
+    CounterFormat: '{hand} hand: {reps}/{target} reps'
+    ReleasedMessage: Pick up the {object} with your {hand} hand.
+    WrongHandMessage: Use your {hand} hand for the {object}.
+    Targets:
+    - Dumbbell: {fileID: 0}
+      ObjectName: blue dumbbell
+      RequiredHand: 1
+      TargetReps: 10
+  _completeMessage: Exercise complete.
+  _createDefaultTvIfMissing: 1
+  _beginOnEnable: 0
+  _hideDisplayUntilStarted: 1
+  _onExerciseCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  _requirePlayerInCircle: 1
+  _playerTransform: {fileID: 0}
+  _exerciseCircleCenter: {fileID: 0}
+  _exerciseCircleRadius: 0.85
+  _outsideCircleMessage: Stand in the circle in front of the TV.
