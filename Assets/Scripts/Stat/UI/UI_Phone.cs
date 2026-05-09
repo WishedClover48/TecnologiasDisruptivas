@@ -1,11 +1,13 @@
-using System;
 using DefaultNamespace;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static Oculus.Interaction.Context;
 
 public class UI_Phone : MonoBehaviour
 {
+    public static UI_Phone Instance { get; private set; }
     [Serializable] private class InternalUIPhone
     {
         public TMP_Text day;
@@ -23,6 +25,13 @@ public class UI_Phone : MonoBehaviour
     
     private PlayerManager playerManager;
     private DayTimeManager dayTimeManager;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
