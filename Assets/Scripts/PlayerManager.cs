@@ -15,15 +15,20 @@ namespace DefaultNamespace
         [Header("Selected Activities")]
         [SerializeField] private List<ActionData_SO> selectedActivities = new List<ActionData_SO>();
         [SerializeField] private GlobalEventSO<ActionData_SO> onActivityApplied;
+
+        [Space]
+        [SerializeField] private SceneTransition sceneTransition;
         
         private DayTimeManager dayTimeManager;
-        
+        private ActionData_SO currentActivity;
+
+
         public int Health => currentHealth;
         public int Stress => currentStress;
         public int Finance => currentFinance;
         public int Money => currentMoney;
-        
         public List<ActionData_SO> SelectedActivities => selectedActivities;
+        public SceneTransition SceneTransition => sceneTransition;
 
         #region  Singelton
 
@@ -48,7 +53,7 @@ namespace DefaultNamespace
         {
             dayTimeManager=DayTimeManager.Instance;
         }
-
+        public ActionData_SO CurrentActivity {  get => currentActivity; set => currentActivity = value; }
 
         public bool CanAffordActivity(ActionData_SO actionData)
         {
@@ -79,7 +84,7 @@ namespace DefaultNamespace
 
             selectedActivities.Add(actionData);
 
-            onActivityApplied.RaiseEvent(actionData );
+            onActivityApplied.RaiseEvent(actionData);
             Debug.Log($"Applied activity: {actionData.ActivityName}. Stats - Finance: {currentFinance}, Health: {currentHealth}, Stress: {currentStress}");
         }
 

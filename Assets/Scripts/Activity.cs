@@ -8,7 +8,6 @@ public class Activity : MonoBehaviour
 
     
     public ActionData_SO GetActivity() => actionData;
-    
 
     [ContextMenu("Do Activity")]
     public void DoActivity()
@@ -21,12 +20,13 @@ public class Activity : MonoBehaviour
 
         if (actionData == null)
         {
-            Debug.LogError("No ActivitySO assigned to this Activity!");
+            Debug.LogError("No ActivitySO assigned to this " + gameObject.name + "!");
             return;
         }
         if (PlayerManager.Instance.CanAffordActivity(actionData))
         {
-            PlayerManager.Instance.ApplyActivity(actionData);
+            //PlayerManager.Instance.ApplyActivity(actionData);
+            PlayerManager.Instance.SceneTransition.TransitionToActivity(actionData);
         }
         else
         {

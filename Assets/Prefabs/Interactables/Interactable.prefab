@@ -263,7 +263,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 7312357506432617523}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 2804046179449045852}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -324,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TriggerDecision
   _grabInteractable: {fileID: 1979386626820641966}
   _activity: {fileID: 411805288675534384}
+  _completionHandlers: []
   _objectCanvas: {fileID: 7558898536420388928}
   _hoverCanvas: {fileID: 3857273920873786024}
   _progress: {fileID: 6036211770535574713}
