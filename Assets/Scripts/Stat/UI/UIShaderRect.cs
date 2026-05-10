@@ -1,12 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// Attach alongside any Image whose material uses a _RectSize property
-/// (e.g. IndependentLife/UI/PhoneBackground).
-/// Creates a per-instance material and keeps _RectSize in pixel units,
-/// matching the Image's RectTransform so SDF calculations are pixel-accurate.
-/// </summary>
 [RequireComponent(typeof(RectTransform))]
 [RequireComponent(typeof(Image))]
 public class UIShaderRect : MonoBehaviour

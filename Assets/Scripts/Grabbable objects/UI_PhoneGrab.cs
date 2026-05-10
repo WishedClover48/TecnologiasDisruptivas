@@ -1,11 +1,6 @@
 using Oculus.Interaction;
 using UnityEngine;
 
-/// <summary>
-/// Diegetic phone behaviour: the screen canvas is only visible while the
-/// player is actively holding the phone. Attach to the phone root GameObject
-/// (the one with a GrabInteractable component).
-/// </summary>
 [RequireComponent(typeof(GrabInteractable))]
 public class UI_PhoneGrab : MonoBehaviour
 {

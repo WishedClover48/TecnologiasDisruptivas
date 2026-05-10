@@ -1,13 +1,7 @@
-// IndependentLife/UI/PhoneBackground
-// Procedural UGUI dark-glass panel for the phone screen.
-// Renders: rounded card + top-to-bottom gradient + subtle glare + thin border ring.
-// Requires _RectSize in pixel units (use UIShaderRect.cs).
-
 Shader "IndependentLife/UI/PhoneBackground"
 {
     Properties
     {
-        // Dummy texture — required by UGUI Image / MaskableGraphic
         [HideInInspector] _MainTex ("Sprite Texture", 2D) = "white" {}
 
         _TopColor     ("Top Color",        Color)  = (0.09, 0.11, 0.17, 1.0)
@@ -18,7 +12,6 @@ Shader "IndependentLife/UI/PhoneBackground"
         _BorderWidth  ("Border Width px",  Float)  = 1.5
         _RectSize     ("Rect Size",        Vector) = (300, 600, 0, 0)
 
-        // UGUI masking
         _StencilComp      ("Stencil Comparison", Float) = 8
         _Stencil          ("Stencil ID",         Float) = 0
         _StencilOp        ("Stencil Operation",  Float) = 0

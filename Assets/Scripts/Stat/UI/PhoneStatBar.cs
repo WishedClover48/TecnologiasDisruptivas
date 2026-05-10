@@ -3,12 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// Attach to any GameObject that has an Image component.
-/// The Image must use a material based on IndependentLife/UI/StatBar.
-/// This script instantiates that material, keeps _RectSize in sync with
-/// the RectTransform, and animates _FillAmount + _FillColor on value changes.
-/// </summary>
 [RequireComponent(typeof(RectTransform))]
 [RequireComponent(typeof(Image))]
 public class PhoneStatBar : MonoBehaviour
@@ -29,7 +23,6 @@ public class PhoneStatBar : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private float lerpSpeed = 5f;
 
-    // ── Shader property IDs ────────────────────────────────────────────────
     private static readonly int ID_Fill     = Shader.PropertyToID("_FillAmount");
     private static readonly int ID_Color    = Shader.PropertyToID("_FillColor");
     private static readonly int ID_RectSize = Shader.PropertyToID("_RectSize");
@@ -40,8 +33,6 @@ public class PhoneStatBar : MonoBehaviour
     private float         currentFill;
     private float         targetFill;
     private Coroutine     anim;
-
-    // ── Lifecycle ──────────────────────────────────────────────────────────
 
     private void Awake()
     {
@@ -72,10 +63,6 @@ public class PhoneStatBar : MonoBehaviour
         if (mat != null) Destroy(mat);
     }
 
-    // ── Public API ─────────────────────────────────────────────────────────
-
-    /// <param name="normalizedValue">0 = empty, 1 = full</param>
-    /// <param name="label">Optional text to display (pass null to leave unchanged)</param>
     public void SetValue(float normalizedValue, string label = null)
     {
         targetFill = Mathf.Clamp01(normalizedValue);
@@ -86,8 +73,6 @@ public class PhoneStatBar : MonoBehaviour
         if (anim != null) StopCoroutine(anim);
         anim = StartCoroutine(AnimateFill());
     }
-
-    // ── Internal ───────────────────────────────────────────────────────────
 
     private IEnumerator AnimateFill()
     {
@@ -131,7 +116,7 @@ public class PhoneStatBar : MonoBehaviour
         }
         {
             float n = (t - lowThreshold) / Mathf.Max(midThreshold - lowThreshold, 0.001f);
-            return Color.Lerp(midColor, midColor, n); // stays amber in mid range
+            return Color.Lerp(midColor, midColor, n);
         }
     }
 }
