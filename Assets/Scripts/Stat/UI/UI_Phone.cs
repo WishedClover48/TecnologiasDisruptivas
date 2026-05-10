@@ -1,30 +1,50 @@
 using DefaultNamespace;
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using static Oculus.Interaction.Context;
 
+/// <summary>
+/// Main controller for the diegetic phone screen.
+/// Reads from DayTimeManager and PlayerManager singletons and drives
+/// PhoneStatBar components + text labels. Reacts to all relevant global events.
+/// </summary>
 public class UI_Phone : MonoBehaviour
 {
     public static UI_Phone Instance { get; private set; }
-    [Serializable] private class InternalUIPhone
-    {
-        public TMP_Text day;
-        public TMP_Text time;
-        public TMP_Text money;
-        public TMP_Text stress;
-        public TMP_Text health;
-        public UI_PhoneHistory history;
-    }
-    
-    [SerializeField] private GlobalEventSO_Int onDayEnd;
-    [SerializeField] private GlobalEventSO<ActionData_SO> onActivityApplied;
-    [Space]
-    [SerializeField] private InternalUIPhone @internal;
-    
-    private PlayerManager playerManager;
-    private DayTimeManager dayTimeManager;
+
+    // ── Header section ────────────────────────────────────────────────────
+    [Header("Header")]
+    [Tooltip("e.g. 'Day 2 / 4'")]
+    [SerializeField] private TMP_Text dayLabel;
+    [Tooltip("Horizontal bar showing remaining hours this day.")]
+    [SerializeField] private PhoneStatBar hoursBar;
+    [Tooltip("Numeric display inside / below the hours bar.")]
+    [SerializeField] private TMP_Text hoursValueLabel;
+
+    // ── Stat bars ─────────────────────────────────────────────────────────
+    [Header("Stat Bars")]
+    [SerializeField] private PhoneStatBar healthBar;
+    [SerializeField] private PhoneStatBar mentalHealthBar;   // inverted Stress
+    [SerializeField] private PhoneStatBar financeBar;
+
+    // ── Money display ─────────────────────────────────────────────────────
+    [Header("Money")]
+    [SerializeField] private TMP_Text moneyLabel;
+
+    // ── History ───────────────────────────────────────────────────────────
+    [Header("History")]
+    [SerializeField] private UI_PhoneHistory history;
+
+    // ── Global events ─────────────────────────────────────────────────────
+    [Header("Global Events")]
+    [SerializeField] private GlobalEventSO_Int        onDayEnd;
+    [SerializeField] private GlobalEventSO_ActionData onActivityApplied;
+    [SerializeField] private GlobalEventSO_Void       onNewDayStarted;
+
+    // ── Internal refs ─────────────────────────────────────────────────────
+    private PlayerManager  pm;
+    private DayTimeManager dtm;
+
+    // ── Lifecycle ─────────────────────────────────────────────────────────
 
     private void Awake()
     {
@@ -35,39 +55,74 @@ public class UI_Phone : MonoBehaviour
 
     private void Start()
     {
-        playerManager = PlayerManager.Instance;
-        dayTimeManager = DayTimeManager.Instance;
+        pm  = PlayerManager.Instance;
+        dtm = DayTimeManager.Instance;
 
-        onActivityApplied.OnEventRaised += HandleActivityApplied;
-        onDayEnd.OnEventRaised += HandleDayEnd;
-        
-        UpdateTime();
-        UpdateStats();
-    }
+        if (onActivityApplied != null) onActivityApplied.OnEventRaised += OnActivityApplied;
+        if (onDayEnd          != null) onDayEnd.OnEventRaised          += OnDayEnd;
+        if (onNewDayStarted   != null) onNewDayStarted.OnEventRaised   += OnNewDayStarted;
 
-    private void HandleDayEnd(int value)
-    {
-        UpdateDay(value);
-    }
-    private void HandleActivityApplied(ActionData_SO action)
-    {
-        UpdateTime();
-        UpdateStats();
-        @internal.history.AddToHistory(action);
+        RefreshAll();
     }
 
-    private void UpdateDay(int value)
+    private void OnDestroy()
     {
-        @internal.day.text = value.ToString();
+        if (onActivityApplied != null) onActivityApplied.OnEventRaised -= OnActivityApplied;
+        if (onDayEnd          != null) onDayEnd.OnEventRaised          -= OnDayEnd;
+        if (onNewDayStarted   != null) onNewDayStarted.OnEventRaised   -= OnNewDayStarted;
     }
-    private void UpdateTime()
+
+    // ── Event handlers ────────────────────────────────────────────────────
+
+    private void OnActivityApplied(ActionData_SO action)
     {
-        @internal.time.text = dayTimeManager.RemainingHours.ToString();
+        RefreshAll();
+        history?.AddToHistory(action);
     }
-    private void UpdateStats()
+
+    private void OnDayEnd(int _)   => RefreshAll();
+    private void OnNewDayStarted() => RefreshAll();
+
+    // ── Refresh ───────────────────────────────────────────────────────────
+
+    private void RefreshAll()
     {
-        @internal.health.text = playerManager.Health.ToString();
-        @internal.money.text = playerManager.Money.ToString();
-        @internal.stress.text = playerManager.Stress.ToString();
+        RefreshHeader();
+        RefreshStatBars();
+        RefreshMoney();
+    }
+
+    private void RefreshHeader()
+    {
+        if (dayLabel != null)
+            dayLabel.text = $"Day {dtm.CurrentDay} / {dtm.TotalDays}";
+
+        float hoursNorm = dtm.MaxHoursToday > 0
+            ? (float)dtm.RemainingHours / dtm.MaxHoursToday
+            : 0f;
+
+        // Drive the bar — label is handled by hoursValueLabel separately so
+        // the bar itself stays clean (no text child needed inside the shader)
+        hoursBar?.SetValue(hoursNorm);
+
+        if (hoursValueLabel != null)
+            hoursValueLabel.text = $"{dtm.RemainingHours}h left";
+    }
+
+    private void RefreshStatBars()
+    {
+        float health  = pm.Health  / 100f;
+        float mental  = 1f - (pm.Stress  / 100f);   // high stress → low mental
+        float finance = pm.Finance / 100f;
+
+        healthBar?.SetValue(health,  $"{pm.Health}%");
+        mentalHealthBar?.SetValue(mental,  $"{Mathf.RoundToInt(mental  * 100)}%");
+        financeBar?.SetValue(finance, $"{pm.Finance}%");
+    }
+
+    private void RefreshMoney()
+    {
+        if (moneyLabel != null)
+            moneyLabel.text = $"${pm.Money}";
     }
 }

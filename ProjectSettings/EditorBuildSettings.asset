@@ -15,6 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Activities/CleanTheHouse.unity
     guid: 536416e66511a3d4bb4b643de40a595a
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 09d000168cfc36e4a8c77d973fde837c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a0759f5824f0c9542bfe1c3b3aea6590, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 483bc1b947b5ba5429af20e752753edd, type: 2}
