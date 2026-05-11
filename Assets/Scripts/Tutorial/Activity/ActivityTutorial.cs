@@ -15,6 +15,7 @@ public class ActivityTutorial : MonoBehaviour, ITutorial
     
     public void Activate()
     {
+        gameObject.SetActive(true);
         canvas.enabled = true;
     }
 

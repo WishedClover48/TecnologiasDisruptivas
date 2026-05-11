@@ -31,8 +31,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1546178496632779718}
-  - {fileID: 2107031997724107211}
   - {fileID: 8746574842698812298}
+  - {fileID: 2107031997724107211}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8533519877909727521
@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb655d0d35e1784cbc0ce32edafb5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialFlow
+  welcomeTutorial: {fileID: 7087071522913363164}
+  activityTutorial: {fileID: 8589722727824145600}
+  phoneTutorial: {fileID: 807786353898356343}
 --- !u!1001 &477571142746670101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,6 +111,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75aa92af8f8ff1b448b9309d5e2f5a91, type: 3}
+--- !u!114 &8589722727824145600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8184306211297573077, guid: 75aa92af8f8ff1b448b9309d5e2f5a91, type: 3}
+  m_PrefabInstance: {fileID: 477571142746670101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f4e6ad86e5ca4439b9579284bfb1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ActivityTutorial
 --- !u!4 &8746574842698812298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9206130693435477919, guid: 75aa92af8f8ff1b448b9309d5e2f5a91, type: 3}
@@ -128,6 +142,18 @@ PrefabInstance:
     - target: {fileID: 4274101534794104321, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500149824472719571, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500149824472719571, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
+      propertyPath: m_Size.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500149824472719571, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
+      propertyPath: m_Size.z
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9206130693435477919, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -174,6 +200,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
+--- !u!114 &807786353898356343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7623120885401260067, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
+  m_PrefabInstance: {fileID: 7133439468063747668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64e5376ac51c3347be0aab31efffdcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhoneTutorial
 --- !u!4 &2107031997724107211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9206130693435477919, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
@@ -245,3 +282,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9206130693435477919, guid: 1720e07d87023ed49b757a8c1a4c4305, type: 3}
   m_PrefabInstance: {fileID: 7689788819787103321}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7087071522913363164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 643390431142844549, guid: 1720e07d87023ed49b757a8c1a4c4305, type: 3}
+  m_PrefabInstance: {fileID: 7689788819787103321}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ad2bcb5e4b0874aa75abef33082557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeTutorial

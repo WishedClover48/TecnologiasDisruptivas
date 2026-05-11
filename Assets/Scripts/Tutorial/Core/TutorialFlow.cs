@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class TutorialFlow : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private WelcomeTutorial welcomeTutorial;
+    [SerializeField] private ActivityTutorial activityTutorial;
+    [SerializeField] private PhoneTutorial phoneTutorial;
+
+    private void Start()
     {
-        
+        welcomeTutorial.onComplete = OnWelcomeComplete;
+        welcomeTutorial.Activate();
     }
 
-    // Update is called once per frame
-    void Update()
+    [ContextMenu("Next")]
+    private void OnWelcomeComplete()
     {
-        
+        activityTutorial.Activate();
+        phoneTutorial.Activate();
     }
 }

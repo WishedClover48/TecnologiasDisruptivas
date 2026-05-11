@@ -20,6 +20,7 @@ public class WelcomeTutorial : MonoBehaviour, ITutorial
     
     public void Activate()
     {
+        gameObject.SetActive(true);
         @internal.welcomeField.Activate(onComplete: () =>
         { @internal.nameField.Activate(onComplete: () => isDone = true);
         });
@@ -34,6 +35,12 @@ public class WelcomeTutorial : MonoBehaviour, ITutorial
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
+        StartCoroutine(FadeOutRoutine());
+    }
+
+    [ContextMenu("Fade Out")]
+    private void FadeOut()
+    {
         StartCoroutine(FadeOutRoutine());
     }
     private IEnumerator FadeOutRoutine()
