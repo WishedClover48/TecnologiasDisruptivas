@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using DefaultNamespace;
 using UnityEngine.Serialization;
@@ -6,6 +7,7 @@ public class Activity : MonoBehaviour
 {
     [FormerlySerializedAs("activity")] [SerializeField] private ActionData_SO actionData;
 
+    public Action OnActivity;
     
     public ActionData_SO GetActivity() => actionData;
 
@@ -26,6 +28,7 @@ public class Activity : MonoBehaviour
         if (PlayerManager.Instance.CanAffordActivity(actionData))
         {
             //PlayerManager.Instance.ApplyActivity(actionData);
+            OnActivity?.Invoke();
             PlayerManager.Instance.SceneTransition.TransitionToActivity(actionData);
         }
         else
