@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using DefaultNamespace;
 public class ExerciseActivityStarter : MonoBehaviour, IActivityCompletionHandler
 {
     [SerializeField] private ExerciseTVGuide _exerciseGuide;
@@ -109,7 +109,8 @@ public class ExerciseActivityStarter : MonoBehaviour, IActivityCompletionHandler
         }
 
         _rewardApplied = true;
-        _activity?.DoActivity();
+        //_activity?.DoActivity();
+        PlayerManager.Instance.ApplyActivity(_activity.GetActivity());
         _exerciseStarted = false;
     }
 }

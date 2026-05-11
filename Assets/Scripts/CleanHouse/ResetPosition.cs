@@ -5,11 +5,13 @@ using UnityEngine;
 public class ResetPosition : MonoBehaviour
 {
     [SerializeField] private List<Transform> _objectsToReset;
-
+    [SerializeField] private GameObject _player;
+    [SerializeField] private Vector3 _initialPosition;
     List<Transform> _originalPosition;
     private void Awake()
     {
         CachePositions();
+        //_player.transform.position = _initialPosition;
     }
     private void OnTriggerEnter(Collider other)
     {
