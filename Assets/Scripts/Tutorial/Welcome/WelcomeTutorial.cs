@@ -3,7 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class WelcomeTutorial : MonoBehaviour
+public class WelcomeTutorial : MonoBehaviour, ITutorial
 {
     [Serializable] private class Internal
     {
@@ -12,29 +12,30 @@ public class WelcomeTutorial : MonoBehaviour
         public CanvasGroup group;
     }
     
+    public Action onComplete;
     private bool isDone;
     [SerializeField] private float fadeOutDuration = 1f;
     [Space] 
     [SerializeField] private Internal @internal;
     
-    private void Start()
+    public void Activate()
     {
         @internal.welcomeField.Activate(onComplete: () =>
         { @internal.nameField.Activate(onComplete: () => isDone = true);
         });
     }
-
-    public void FadeOut()
+    public void Deactivate()
     {
-        StartCoroutine(FadeOutRoutine());
+        onComplete?.Invoke();
+        onComplete = null;
+        gameObject.SetActive(false);
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
         StartCoroutine(FadeOutRoutine());
     }
-
     private IEnumerator FadeOutRoutine()
     {
         float elapsed = 0f;
@@ -47,6 +48,6 @@ public class WelcomeTutorial : MonoBehaviour
         }
 
         @internal.group.alpha = 0f;
-        gameObject.SetActive(false);
+        Deactivate();
     }
 }
