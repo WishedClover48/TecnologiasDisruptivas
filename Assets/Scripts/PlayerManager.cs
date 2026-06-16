@@ -22,6 +22,8 @@ namespace DefaultNamespace
         private DayTimeManager dayTimeManager;
         private ActionData_SO currentActivity;
 
+        private int initialHealth, initialStress, initialFinance, initialMoney;
+
 
         public int Health => currentHealth;
         public int Stress => currentStress;
@@ -40,6 +42,11 @@ namespace DefaultNamespace
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
+
+                initialHealth  = currentHealth;
+                initialStress  = currentStress;
+                initialFinance = currentFinance;
+                initialMoney   = currentMoney;
             }
             else
             {
@@ -48,6 +55,16 @@ namespace DefaultNamespace
         }
 
         #endregion
+
+        public void ResetState()
+        {
+            currentHealth  = initialHealth;
+            currentStress  = initialStress;
+            currentFinance = initialFinance;
+            currentMoney   = initialMoney;
+            currentActivity = null;
+            selectedActivities.Clear();
+        }
 
         private void Start()
         {

@@ -46,6 +46,13 @@ public class DayTimeManager : MonoBehaviour
             onActionPerformed.OnEventRaised -= OnActionReceived;
     }
     
+    public void ResetState()
+    {
+        CurrentDay = 1;
+        RandomizeHoursForDay();
+        onNewDayStarted?.RaiseEvent();
+    }
+
     public void SpendTime(int hours)
     {
         RemainingHours -= hours;
