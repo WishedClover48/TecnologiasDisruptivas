@@ -35,8 +35,7 @@ public class FindMG_GameManager
         ToDoList.Remove(item);
         OnItemCompleted?.Invoke(item);
 
-        if (ToDoList.Count == 0)
-            ListComplete();
+        if (ToDoList.Count == 0) ListComplete();
     }
     private void ListComplete()
     {

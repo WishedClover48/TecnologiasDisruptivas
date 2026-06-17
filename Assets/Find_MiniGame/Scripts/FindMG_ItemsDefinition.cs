@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class FindMG_ItemsDefinition : ScriptableObject
     public List<FindMG_ItemDefinition> items;
 }
 
-public struct FindMG_ItemDefinition
+[Serializable] public struct FindMG_ItemDefinition
 {
     public string itemName;
     public Mesh itemMesh;

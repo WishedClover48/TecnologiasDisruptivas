@@ -22,11 +22,14 @@ public class FindMG_UI : MonoBehaviour
     private void ItemCompleted(FindMG_Item item)
     {
         //Crosses item of the list UI wise (Probably change color)
+        Debug.Log("ItemCompleted");
     }
 
     private void ListCompleted()
     {
         //Hides List and shows Resume
+        
+        Debug.Log("ListCompleted");
         
         gameManager.OnItemCompleted -= ItemCompleted;
         gameManager.OnListCompleted -= ListCompleted;

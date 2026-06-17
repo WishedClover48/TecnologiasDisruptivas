@@ -5,8 +5,9 @@ public class FindMG_Item : MonoBehaviour
 {
     [SerializeField] private MeshFilter meshFilter;
     [SerializeField] private MeshRenderer meshRenderer;
-    
-    public bool ToDo { get; private set; }
+    [SerializeField] private MeshCollider meshCollider;
+
+    public bool ToDo;
     public void Init(FindMG_ItemDefinition definition, bool toDo)
     {
         gameObject.name = definition.itemName;
@@ -14,5 +15,6 @@ public class FindMG_Item : MonoBehaviour
 
         meshFilter.sharedMesh = definition.itemMesh;
         meshRenderer.sharedMaterials = definition.itemMaterial;
+        meshCollider.sharedMesh = definition.itemMesh;
     }
 }

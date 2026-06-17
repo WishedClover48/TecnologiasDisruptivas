@@ -17,7 +17,6 @@ public class FindMG_GameInitalizer : MonoBehaviour
     [SerializeField] private FindMG_StartingConfiguration config;
     
     private List<FindMG_Item> toDoList;
-    private FindMG_GameManager gameManager;
 
     private void Start()
     {
@@ -43,7 +42,7 @@ public class FindMG_GameInitalizer : MonoBehaviour
             spawnPoints[i].Init(filler, false);
         }
 
-        gameManager = new FindMG_GameManager(toDoList, config.dropZones, config.ui);
+        var gameManager = new FindMG_GameManager(toDoList, config.dropZones, config.ui);
     }
 
     private void Shuffle<T>(List<T> list)
