@@ -6,6 +6,7 @@ public class ExerciseActivityStarter : MonoBehaviour, IActivityCompletionHandler
     [SerializeField] private Activity _activity;
     [SerializeField] private GameObject _tvRoot;
     [SerializeField] private bool _hideTvOnStart = true;
+    [SerializeField] private MinigameTutorial _tutorial;
 
     private bool _exerciseStarted;
     private bool _rewardApplied;
@@ -89,7 +90,10 @@ public class ExerciseActivityStarter : MonoBehaviour, IActivityCompletionHandler
         if (_exerciseGuide != null)
         {
             _exerciseGuide.enabled = true;
-            _exerciseGuide.BeginExercise();
+            if (_tutorial != null)
+                _tutorial.Show();
+            else
+                _exerciseGuide.BeginExercise();
         }
         else
         {
