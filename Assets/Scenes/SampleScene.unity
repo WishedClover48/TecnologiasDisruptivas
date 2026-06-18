@@ -478,6 +478,8 @@ MonoBehaviour:
   _grabInteractable: {fileID: 31887839}
   _holdDuration: 1.5
   _allowTriggerHold: 1
+  _requireAim: 1
+  _rayLength: 8
   _triggerSide: 1
   _lockInPlace: 1
   _progress: {fileID: 340448101}
@@ -8388,7 +8390,7 @@ MonoBehaviour:
     que las palmas queden mirando hacia arriba. Eleva el peso hasta la altura de
     los hombros. Baja el peso hasta estirar el brazo por completo. Repite esto 10
     veces con cada brazo para terminar."
-  videoClip: {fileID: 0}
+  videoClip: {fileID: 32900000, guid: aed64fd0de57cb6418d9625a37dbe128, type: 3}
   panelRoot: {fileID: 1199487907}
   titleLabel: {fileID: 1131082922}
   descriptionLabel: {fileID: 1905035159}
@@ -13571,6 +13573,8 @@ MonoBehaviour:
   _grabInteractable: {fileID: 1435342326}
   _holdDuration: 1.5
   _allowTriggerHold: 1
+  _requireAim: 1
+  _rayLength: 8
   _triggerSide: 2
   _lockInPlace: 1
   _progress: {fileID: 2092279036}
@@ -16559,6 +16563,8 @@ MonoBehaviour:
   _grabInteractable: {fileID: 1701660630}
   _holdDuration: 1.5
   _allowTriggerHold: 1
+  _requireAim: 1
+  _rayLength: 8
   _triggerSide: 0
   _lockInPlace: 1
   _progress: {fileID: 1997340507}
@@ -22368,6 +22374,63 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.008180305, y: -0.0053694975, z: -0.020344593}
     m_Extent: {x: 0.046097822, y: 0.067293465, z: 0.0557265}
   m_DirtyAABB: 0
+--- !u!1001 &4050435938327085083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3672618126606728134, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_Name
+      value: VRLaser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.17453
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.13157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.6967
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405154392688711780, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff6b83398f63a5f40974b0b0620ab829, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -22396,3 +22459,4 @@ SceneRoots:
   - {fileID: 2125536485}
   - {fileID: 1330211038}
   - {fileID: 907840941}
+  - {fileID: 4050435938327085083}

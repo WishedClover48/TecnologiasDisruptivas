@@ -11,8 +11,10 @@ public class HoldToActivateButton : MonoBehaviour
     [SerializeField] private GrabInteractable _grabInteractable;
     [SerializeField] private float _holdDuration = 1.5f;
 
-    [Header("Trigger fallback (works at any distance)")]
-    [SerializeField] private bool _allowTriggerHold = false;
+    [Header("Aim + trigger (point the laser, then hold trigger)")]
+    [SerializeField] private bool _allowTriggerHold = true;
+    [SerializeField] private bool _requireAim = true;
+    [SerializeField] private float _rayLength = 8f;
     [SerializeField] private TriggerSide _triggerSide = TriggerSide.Any;
 
     public enum TriggerSide { Any, Left, Right }
@@ -31,11 +33,22 @@ public class HoldToActivateButton : MonoBehaviour
     private Vector3    _lockedPos;
     private Quaternion _lockedRot;
     private bool       _poseCached;
+    private Transform  _rightAnchor;
+    private Transform  _leftAnchor;
 
     private void Awake()
     {
         if (_grabInteractable == null)
             _grabInteractable = GetComponentInChildren<GrabInteractable>(true);
+
+        _rightAnchor = FindAnchor("RightControllerAnchor", "RightHandAnchor");
+        _leftAnchor  = FindAnchor("LeftControllerAnchor",  "LeftHandAnchor");
+    }
+
+    private static Transform FindAnchor(string primary, string fallback)
+    {
+        var go = GameObject.Find(primary) ?? GameObject.Find(fallback);
+        return go != null ? go.transform : null;
     }
 
     private void OnEnable()
@@ -72,21 +85,39 @@ public class HoldToActivateButton : MonoBehaviour
         if (_grabInteractable != null && _grabInteractable.State == InteractableState.Select)
             return true;
 
-        if (_allowTriggerHold && TriggerHeld())
+        if (_allowTriggerHold && TriggerConfirm())
             return true;
 
         return false;
     }
 
-    private bool TriggerHeld()
+    private bool TriggerConfirm()
     {
-        switch (_triggerSide)
+        if (!_requireAim)
         {
-            case TriggerSide.Left:  return Trigger(OVRInput.Controller.LTouch);
-            case TriggerSide.Right: return Trigger(OVRInput.Controller.RTouch);
-            default:                return Trigger(OVRInput.Controller.LTouch)
-                                        || Trigger(OVRInput.Controller.RTouch);
+            return (SideAllows(TriggerSide.Right) && Trigger(OVRInput.Controller.RTouch))
+                || (SideAllows(TriggerSide.Left)  && Trigger(OVRInput.Controller.LTouch));
         }
+
+        if (SideAllows(TriggerSide.Right) && Aimed(_rightAnchor) && Trigger(OVRInput.Controller.RTouch))
+            return true;
+        if (SideAllows(TriggerSide.Left) && Aimed(_leftAnchor) && Trigger(OVRInput.Controller.LTouch))
+            return true;
+
+        return false;
+    }
+
+    private bool SideAllows(TriggerSide side)
+    {
+        return _triggerSide == TriggerSide.Any || _triggerSide == side;
+    }
+
+    private bool Aimed(Transform anchor)
+    {
+        if (anchor == null) return false;
+        if (!Physics.Raycast(anchor.position, anchor.forward, out RaycastHit hit, _rayLength))
+            return false;
+        return hit.transform == transform || hit.transform.IsChildOf(transform);
     }
 
     private static bool Trigger(OVRInput.Controller controller)
