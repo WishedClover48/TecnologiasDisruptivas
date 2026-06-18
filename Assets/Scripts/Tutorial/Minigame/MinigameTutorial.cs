@@ -54,9 +54,10 @@ public class MinigameTutorial : MonoBehaviour
         if (titleLabel != null       && !string.IsNullOrEmpty(titleText))       titleLabel.text       = titleText;
         if (descriptionLabel != null && !string.IsNullOrEmpty(descriptionText)) descriptionLabel.text = descriptionText;
 
+        if (panelRoot != null) panelRoot.SetActive(true);
+
         SetupVideo();
 
-        if (panelRoot != null) panelRoot.SetActive(true);
         if (pauseWhileShown) Time.timeScale = 0f;
 
         if (placeInFrontOfPlayer)
@@ -101,7 +102,11 @@ public class MinigameTutorial : MonoBehaviour
 
     private void OnVideoPrepared(VideoPlayer vp)
     {
-        if (videoImage != null) videoImage.texture = vp.texture;
+        if (videoImage != null)
+        {
+            videoImage.texture = vp.texture;
+            videoImage.color   = Color.white;
+        }
         vp.Play();
     }
 
