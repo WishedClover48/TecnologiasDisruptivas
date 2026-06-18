@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +20,7 @@ public class MinigameTutorial : MonoBehaviour
     [SerializeField] private VideoPlayer videoPlayer;
 
     [Header("Placement")]
+    [SerializeField] private bool placeInFrontOfPlayer = true;
     [SerializeField] private float spawnDistance = 1.6f;
     [SerializeField] private float heightOffset  = 0f;
 
@@ -53,10 +55,26 @@ public class MinigameTutorial : MonoBehaviour
         if (descriptionLabel != null && !string.IsNullOrEmpty(descriptionText)) descriptionLabel.text = descriptionText;
 
         SetupVideo();
-        PlaceInFrontOfPlayer();
 
         if (panelRoot != null) panelRoot.SetActive(true);
         if (pauseWhileShown) Time.timeScale = 0f;
+
+        if (placeInFrontOfPlayer)
+        {
+            PlaceInFrontOfPlayer();
+            StartCoroutine(SettlePlacement());
+        }
+    }
+
+    private IEnumerator SettlePlacement()
+    {
+        float t = 0f;
+        while (t < 0.5f)
+        {
+            PlaceInFrontOfPlayer();
+            t += Time.unscaledDeltaTime;
+            yield return null;
+        }
     }
 
     private void SetupVideo()

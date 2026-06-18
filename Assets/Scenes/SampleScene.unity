@@ -479,6 +479,7 @@ MonoBehaviour:
   _holdDuration: 1.5
   _allowTriggerHold: 1
   _triggerSide: 1
+  _lockInPlace: 1
   _progress: {fileID: 340448101}
   _onActivated:
     m_PersistentCalls:
@@ -8393,6 +8394,7 @@ MonoBehaviour:
   descriptionLabel: {fileID: 1905035159}
   videoImage: {fileID: 278406293}
   videoPlayer: {fileID: 278406289}
+  placeInFrontOfPlayer: 0
   spawnDistance: 1.6
   heightOffset: 0
   showOnStart: 0
@@ -8422,7 +8424,7 @@ Transform:
   m_GameObject: {fileID: 907840939}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.03, y: 0, z: -7.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11398,7 +11400,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199487907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11408,7 +11410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.499, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1210803860
@@ -13570,6 +13572,7 @@ MonoBehaviour:
   _holdDuration: 1.5
   _allowTriggerHold: 1
   _triggerSide: 2
+  _lockInPlace: 1
   _progress: {fileID: 2092279036}
   _onActivated:
     m_PersistentCalls:
@@ -16557,6 +16560,7 @@ MonoBehaviour:
   _holdDuration: 1.5
   _allowTriggerHold: 1
   _triggerSide: 0
+  _lockInPlace: 1
   _progress: {fileID: 1997340507}
   _onActivated:
     m_PersistentCalls:

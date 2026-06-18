@@ -12,10 +12,13 @@ public class HoldToActivateButton : MonoBehaviour
     [SerializeField] private float _holdDuration = 1.5f;
 
     [Header("Trigger fallback (works at any distance)")]
-    [SerializeField] private bool _allowTriggerHold = true;
+    [SerializeField] private bool _allowTriggerHold = false;
     [SerializeField] private TriggerSide _triggerSide = TriggerSide.Any;
 
     public enum TriggerSide { Any, Left, Right }
+
+    [Header("Keep static (don't move when grabbed)")]
+    [SerializeField] private bool _lockInPlace = true;
 
     [Header("Feedback")]
     [SerializeField] private Image _progress;
@@ -23,8 +26,11 @@ public class HoldToActivateButton : MonoBehaviour
     [Header("Event")]
     [SerializeField] private UnityEvent _onActivated;
 
-    private Coroutine _fillRoutine;
-    private bool      _activated;
+    private Coroutine  _fillRoutine;
+    private bool       _activated;
+    private Vector3    _lockedPos;
+    private Quaternion _lockedRot;
+    private bool       _poseCached;
 
     private void Awake()
     {
@@ -36,6 +42,19 @@ public class HoldToActivateButton : MonoBehaviour
     {
         _activated = false;
         if (_progress != null) _progress.fillAmount = 0f;
+
+        _lockedPos  = transform.localPosition;
+        _lockedRot  = transform.localRotation;
+        _poseCached = true;
+    }
+
+    private void LateUpdate()
+    {
+        if (_lockInPlace && _poseCached)
+        {
+            transform.localPosition = _lockedPos;
+            transform.localRotation = _lockedRot;
+        }
     }
 
     private void Update()
