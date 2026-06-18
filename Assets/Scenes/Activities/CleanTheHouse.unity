@@ -10781,6 +10781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoldToActivateButton
   _grabInteractable: {fileID: 1657739035}
   _holdDuration: 1.5
+  _allowTriggerHold: 1
+  _triggerSide: 0
   _progress: {fileID: 6429990}
   _onActivated:
     m_PersistentCalls:
@@ -11633,8 +11635,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be62b9e29d000e43bb89b96fe982693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigameTutorial
-  titleText: "C\xF3mo jugar"
-  descriptionText: 
+  titleText: Tutorial
+  descriptionText: "Junt\xE1 la basura que hay por el departamento y l\xE1nzala hacia
+    el tacho de basura, intentando que entre dentro de este. Una vez que hayas tirado
+    toda la basura terminar\xE1 el minijuego."
   videoClip: {fileID: 0}
   panelRoot: {fileID: 2121803097}
   titleLabel: {fileID: 719814278}
@@ -11644,7 +11648,7 @@ MonoBehaviour:
   spawnDistance: 1.6
   heightOffset: 0
   showOnStart: 1
-  pauseWhileShown: 1
+  pauseWhileShown: 0
   enableOnAcknowledge:
   - {fileID: 3267471358579820140}
   - {fileID: 1920522390}

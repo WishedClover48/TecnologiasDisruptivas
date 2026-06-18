@@ -477,6 +477,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoldToActivateButton
   _grabInteractable: {fileID: 31887839}
   _holdDuration: 1.5
+  _allowTriggerHold: 1
+  _triggerSide: 1
   _progress: {fileID: 340448101}
   _onActivated:
     m_PersistentCalls:
@@ -8383,8 +8385,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be62b9e29d000e43bb89b96fe982693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigameTutorial
-  titleText: "C\xF3mo jugar"
-  descriptionText: 
+  titleText: Tutorial
+  descriptionText: "Agarra la mancuerna con una mano, mant\xE9n los codos pegados
+    a las costillas y sin moverlos hacia adelante. Orienta las mu\xF1ecas de forma
+    que las palmas queden mirando hacia arriba. Eleva el peso hasta la altura de
+    los hombros. Baja el peso hasta estirar el brazo por completo. Repite esto 10
+    veces con cada brazo para terminar."
   videoClip: {fileID: 0}
   panelRoot: {fileID: 1199487907}
   titleLabel: {fileID: 1131082922}
@@ -8394,7 +8400,7 @@ MonoBehaviour:
   spawnDistance: 1.6
   heightOffset: 0
   showOnStart: 0
-  pauseWhileShown: 1
+  pauseWhileShown: 0
   enableOnAcknowledge: []
   onAcknowledged:
     m_PersistentCalls:
@@ -13566,6 +13572,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoldToActivateButton
   _grabInteractable: {fileID: 1435342326}
   _holdDuration: 1.5
+  _allowTriggerHold: 1
+  _triggerSide: 2
   _progress: {fileID: 2092279036}
   _onActivated:
     m_PersistentCalls:
@@ -16551,6 +16559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoldToActivateButton
   _grabInteractable: {fileID: 1701660630}
   _holdDuration: 1.5
+  _allowTriggerHold: 1
+  _triggerSide: 0
   _progress: {fileID: 1997340507}
   _onActivated:
     m_PersistentCalls:

@@ -114,10 +114,10 @@ public class UI_GameEndFeedback : MonoBehaviour
 
     private Transform ResolveCameraTransform()
     {
-        if (Camera.main != null) return Camera.main.transform;
-
         var anchor = GameObject.Find("CenterEyeAnchor");
         if (anchor != null) return anchor.transform;
+
+        if (Camera.main != null) return Camera.main.transform;
 
         var anyCam = FindObjectOfType<Camera>();
         return anyCam != null ? anyCam.transform : null;

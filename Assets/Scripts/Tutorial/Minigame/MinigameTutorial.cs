@@ -24,7 +24,7 @@ public class MinigameTutorial : MonoBehaviour
 
     [Header("Flow")]
     [SerializeField] private bool showOnStart = true;
-    [SerializeField] private bool pauseWhileShown = true;
+    [SerializeField] private bool pauseWhileShown = false;
     [SerializeField] private GameObject[] enableOnAcknowledge;
     [SerializeField] private UnityEvent onAcknowledged;
 
@@ -49,8 +49,8 @@ public class MinigameTutorial : MonoBehaviour
     {
         acknowledged = false;
 
-        if (titleLabel != null)       titleLabel.text       = titleText;
-        if (descriptionLabel != null) descriptionLabel.text = descriptionText;
+        if (titleLabel != null       && !string.IsNullOrEmpty(titleText))       titleLabel.text       = titleText;
+        if (descriptionLabel != null && !string.IsNullOrEmpty(descriptionText)) descriptionLabel.text = descriptionText;
 
         SetupVideo();
         PlaceInFrontOfPlayer();
@@ -124,10 +124,10 @@ public class MinigameTutorial : MonoBehaviour
 
     private Transform ResolveCameraTransform()
     {
-        if (Camera.main != null) return Camera.main.transform;
-
         var anchor = GameObject.Find("CenterEyeAnchor");
         if (anchor != null) return anchor.transform;
+
+        if (Camera.main != null) return Camera.main.transform;
 
         var anyCam = FindFirstObjectByType<Camera>();
         return anyCam != null ? anyCam.transform : null;

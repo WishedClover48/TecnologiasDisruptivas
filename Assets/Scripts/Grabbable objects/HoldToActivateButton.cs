@@ -11,6 +11,12 @@ public class HoldToActivateButton : MonoBehaviour
     [SerializeField] private GrabInteractable _grabInteractable;
     [SerializeField] private float _holdDuration = 1.5f;
 
+    [Header("Trigger fallback (works at any distance)")]
+    [SerializeField] private bool _allowTriggerHold = true;
+    [SerializeField] private TriggerSide _triggerSide = TriggerSide.Any;
+
+    public enum TriggerSide { Any, Left, Right }
+
     [Header("Feedback")]
     [SerializeField] private Image _progress;
 
@@ -23,41 +29,57 @@ public class HoldToActivateButton : MonoBehaviour
     private void Awake()
     {
         if (_grabInteractable == null)
-            _grabInteractable = GetComponent<GrabInteractable>();
-    }
-
-    private void Start()
-    {
-        if (_progress != null) _progress.fillAmount = 0f;
+            _grabInteractable = GetComponentInChildren<GrabInteractable>(true);
     }
 
     private void OnEnable()
     {
-        if (_grabInteractable != null)
-            _grabInteractable.WhenStateChanged += OnStateChanged;
+        _activated = false;
+        if (_progress != null) _progress.fillAmount = 0f;
     }
 
-    private void OnDisable()
-    {
-        if (_grabInteractable != null)
-            _grabInteractable.WhenStateChanged -= OnStateChanged;
-        StopFill();
-    }
-
-    private void OnStateChanged(InteractableStateChangeArgs args)
+    private void Update()
     {
         if (_activated) return;
 
-        if (args.NewState == InteractableState.Select)
+        if (ShouldFill())
             BeginFill();
         else
             StopFill();
     }
 
+    private bool ShouldFill()
+    {
+        if (_grabInteractable != null && _grabInteractable.State == InteractableState.Select)
+            return true;
+
+        if (_allowTriggerHold && TriggerHeld())
+            return true;
+
+        return false;
+    }
+
+    private bool TriggerHeld()
+    {
+        switch (_triggerSide)
+        {
+            case TriggerSide.Left:  return Trigger(OVRInput.Controller.LTouch);
+            case TriggerSide.Right: return Trigger(OVRInput.Controller.RTouch);
+            default:                return Trigger(OVRInput.Controller.LTouch)
+                                        || Trigger(OVRInput.Controller.RTouch);
+        }
+    }
+
+    private static bool Trigger(OVRInput.Controller controller)
+    {
+        return OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controller) > 0.5f
+            || OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,  controller) > 0.5f;
+    }
+
     private void BeginFill()
     {
-        StopFill();
-        _fillRoutine = StartCoroutine(FillRoutine());
+        if (_fillRoutine == null)
+            _fillRoutine = StartCoroutine(FillRoutine());
     }
 
     private IEnumerator FillRoutine()
