@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,12 +18,15 @@ public class PageSusCuentasMinigame : MonoBehaviour
     [SerializeField]private TextMeshProUGUI TimerText;
     [SerializeField]private float timer;
     [SerializeField]private float ExitTimer;
+    [SerializeField] private List<ActionData_SO> Results;
     private List<FacturaMono> factura=new List<FacturaMono>();
     private List<TextMeshProUGUI> valuesLabel=new List<TextMeshProUGUI>();
     private List<TextMeshProUGUI> facturaLabel=new List<TextMeshProUGUI>();
     private int CurrentFactura=0;
     private int PagosCorrectos=0;
+    private int TaskCompleted=0;
     private List<Pago> pagos=new List<Pago>();
+    
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +41,8 @@ public class PageSusCuentasMinigame : MonoBehaviour
             for (int j = 0; j < 4; j++)
             {
                 pago.montos.Add((int)(monto*Random.Range(0.7f, 1.3f)));
+                if (pago.montos[j] > 999999)
+                    pago.montos[j] = 999999;
             }
             List<string> empresasDisponibles = new List<string>(empresas);
             if (i > 0)
@@ -102,13 +108,18 @@ public class PageSusCuentasMinigame : MonoBehaviour
     {
         if(timer > 0)
             timer -= Time.deltaTime;
-        TimerText.text = timer.ToString("0.00");
-        if (timer <= 0)
+        TimerText.text = timer.ToString("00");
+        if (timer <= 0||TaskCompleted==3)
         {
             timer = 0;
             ExitTimer -= Time.deltaTime;
+            Debug.Log(PagosCorrectos);
             if (ExitTimer <= 0)
             {
+                if(TaskCompleted<Results.Count)
+                    PlayerManager.Instance.ApplyActivity(Results[TaskCompleted]);
+                else
+                    PlayerManager.Instance.ApplyActivity(Results[Results.Count-1]);
                 SceneManager.LoadScene(0);
             }
         }
@@ -131,6 +142,7 @@ public class PageSusCuentasMinigame : MonoBehaviour
     }
     public void Pagar(int i)
     {
+        TaskCompleted++;
         if (pagos[CurrentFactura].montoCorrecto == i)
         {
             PagosCorrectos++;
