@@ -3,13 +3,18 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="632b2832-4581-4d81-a2a5-dd6c1205e718" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Effect.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Effect.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PageSusCuentasMinigame/FacturaMono.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PageSusCuentasMinigame/FacturaMono.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TecnologiasDisruptivas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TecnologiasDisruptivas/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/OculusRuntimeSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OculusRuntimeSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Effect.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Effect.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXRPackageSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXRPackageSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +24,75 @@
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="12" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorial/TypeText.cs" root0="FORCE_HIGHLIGHTING" />
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.000000000397039" />
+      <entry key="MS500" value="1.0131754863777356" />
+      <entry key="S2" value="1.344293195251193" />
+      <entry key="S5" value="1.8689839659343006" />
+      <entry key="S10" value="2.6063403165121386" />
+      <entry key="S30" value="3.862756894296136" />
+      <entry key="S60" value="4.605633017155322" />
+      <entry key="M2" value="6.728919451882568" />
+      <entry key="M5" value="15.560411798792497" />
+      <entry key="M10" value="28.095228840996782" />
+      <entry key="M15" value="40.73679532406625" />
+      <entry key="M30" value="79.37968949898725" />
+      <entry key="H1" value="145.8203347135413" />
+      <entry key="H2" value="231.04364241049365" />
+      <entry key="H4" value="308.2446658866659" />
+      <entry key="D1" value="405.4958752452814" />
+      <entry key="W1" value="426.3772573569721" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.2246956570306863E-161" />
+      <entry key="S2" value="5.915712296352765E-41" />
+      <entry key="S5" value="8.105929419123596E-17" />
+      <entry key="S10" value="9.003516427605962E-9" />
+      <entry key="S30" value="0.0022474891374984823" />
+      <entry key="S60" value="0.07986500259109204" />
+      <entry key="M2" value="0.8189745103772267" />
+      <entry key="M5" value="4.697255780913323" />
+      <entry key="M10" value="10.649176049890189" />
+      <entry key="M15" value="16.370649238838475" />
+      <entry key="M30" value="32.25291300354065" />
+      <entry key="H1" value="56.26143520682929" />
+      <entry key="H2" value="83.88868497201143" />
+      <entry key="H4" value="107.41430527867101" />
+      <entry key="D1" value="135.94521823822902" />
+      <entry key="W1" value="141.9598138949821" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.017824433227378485" />
+      <entry key="MS500" value="0.4579718004813006" />
+      <entry key="S2" value="1.1473143513515955" />
+      <entry key="S5" value="1.7726652268725893" />
+      <entry key="S10" value="2.542679075065945" />
+      <entry key="S30" value="3.83324146330872" />
+      <entry key="S60" value="4.663127272976008" />
+      <entry key="M2" value="7.513046634937274" />
+      <entry key="M5" value="20.195841171533328" />
+      <entry key="M10" value="38.68219833318759" />
+      <entry key="M15" value="57.048340830633435" />
+      <entry key="M30" value="111.58042248665554" />
+      <entry key="H1" value="202.0389872563078" />
+      <entry key="H2" value="314.901120694135" />
+      <entry key="H4" value="415.639094842333" />
+      <entry key="D1" value="541.4369028653448" />
+      <entry key="W1" value="568.3364459290518" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -47,7 +116,7 @@
     "Unity Attach To.Attach to.executor": "Debug",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "AprtmentScene",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -57,7 +126,7 @@
 }]]></component>
   <component name="RunManager" selected="Unity Attach To.Attach to">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.4.0f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Unity\6000.4.0f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Usuario\TecnologiasDisruptivas -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Usuario\TecnologiasDisruptivas" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -67,7 +136,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.4.0f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Unity\6000.4.0f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Usuario\TecnologiasDisruptivas -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Usuario\TecnologiasDisruptivas" />
       <option name="PASS_PARENT_ENVS" value="1" />
