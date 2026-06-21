@@ -16955,6 +16955,11 @@ MonoBehaviour:
   TimerText: {fileID: 1052058831}
   timer: 200
   ExitTimer: 5
+  Results:
+  - {fileID: 11400000, guid: 9e3d87bbf2d59ce4a87c87438a04175b, type: 2}
+  - {fileID: 11400000, guid: cf7d591ed25f6d24aa2bd526fc2c5ed7, type: 2}
+  - {fileID: 11400000, guid: 065cc8a81d1aabc448147c0538d93553, type: 2}
+  - {fileID: 11400000, guid: c6e22b60e4729d54fad005d978b0f660, type: 2}
 --- !u!4 &1531170720
 Transform:
   m_ObjectHideFlags: 0
