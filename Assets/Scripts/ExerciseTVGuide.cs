@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -30,6 +32,7 @@ public class ExerciseTVGuide : MonoBehaviour
         public ExerciseTarget[] Targets;
     }
 
+    [SerializeField] private Material CircleMaterial;
     [SerializeField] private TMP_Text _messageText;
     [SerializeField] private GameObject _displayRoot;
     [SerializeField] private ExercisePhase[] _phases;
@@ -158,8 +161,12 @@ public class ExerciseTVGuide : MonoBehaviour
                 target.TargetReps = Mathf.Max(1, target.TargetReps);
                 target.Dumbbell.SetCanCountProvider(IsPlayerInCircle);
                 target.Dumbbell.BeginSet(target.TargetReps, target.RequiredHand);
+                List<GameObject> childs=new List<GameObject>();
+
             }
         }
+        _exerciseCircleCenter.gameObject.SetActive(true);
+        
 
         SetMessage(phase.StartMessage);
     }
@@ -385,7 +392,7 @@ public class ExerciseTVGuide : MonoBehaviour
         {
             return;
         }
-
+        _exerciseCircleCenter.gameObject.SetActive(false);
         _completionRaised = true;
         ExerciseCompleted?.Invoke();
         _onExerciseCompleted?.Invoke();
@@ -601,9 +608,11 @@ public class ExerciseTVGuide : MonoBehaviour
         circle.transform.SetParent(transform, false);
         circle.transform.localPosition = new Vector3(0f, -1.25f, -1.25f);
         circle.transform.localScale = new Vector3(_exerciseCircleRadius * 2f, 0.01f, _exerciseCircleRadius * 2f);
-        circle.GetComponent<Renderer>().material = CreateMaterial(new Color(0.08f, 0.45f, 0.95f, 0.55f));
+        circle.GetComponent<Renderer>().material = CircleMaterial;
         Destroy(circle.GetComponent<Collider>());
         _exerciseCircleCenter = circle.transform;
+        _exerciseCircleCenter.gameObject.SetActive(false);
+        
     }
 
     private Material CreateMaterial(Color color)

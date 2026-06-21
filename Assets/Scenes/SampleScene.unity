@@ -16889,7 +16889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2994311030740298293, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.77
+      value: -0.062
       objectReference: {fileID: 0}
     - target: {fileID: 2994311030740298293, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16897,11 +16897,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2994311030740298293, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.061
+      value: -8.213
       objectReference: {fileID: 0}
     - target: {fileID: 2994311030740298293, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.3613805
       objectReference: {fileID: 0}
     - target: {fileID: 2994311030740298293, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: m_LocalRotation.x
@@ -16909,7 +16909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2994311030740298293, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.93241847
       objectReference: {fileID: 0}
     - target: {fileID: 2994311030740298293, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: m_LocalRotation.z
@@ -16921,7 +16921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2994311030740298293, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 137.63
       objectReference: {fileID: 0}
     - target: {fileID: 2994311030740298293, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -16931,6 +16931,10 @@ PrefabInstance:
       propertyPath: _displayRoot
       value: 
       objectReference: {fileID: 229695285}
+    - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
+      propertyPath: CircleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: efc256cbc4764c0458a0c9e60599f2f0, type: 2}
     - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: _phases.Array.data[1].StartMessage
       value: Grab the Red dumbbell with your left hand.
@@ -23158,7 +23162,6 @@ SceneRoots:
   - {fileID: 537492087}
   - {fileID: 193662091}
   - {fileID: 85831098}
-  - {fileID: 1696017845}
   - {fileID: 1092924562}
   - {fileID: 1882728673}
   - {fileID: 1906178161}
@@ -23176,3 +23179,4 @@ SceneRoots:
   - {fileID: 907840941}
   - {fileID: 4050435938327085083}
   - {fileID: 872943848}
+  - {fileID: 1696017845}
