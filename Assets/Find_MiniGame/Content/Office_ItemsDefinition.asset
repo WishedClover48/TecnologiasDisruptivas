@@ -13,23 +13,19 @@ MonoBehaviour:
   m_Name: Office_ItemsDefinition
   m_EditorClassIdentifier: Assembly-CSharp::FindMG_ItemsDefinition
   items:
-  - itemName: A
-    itemMesh: {fileID: 2534964839176971238, guid: 301235fdf69a78e44906cfaa4976a7cf, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
-  - itemName: B
-    itemMesh: {fileID: -7759331768739107841, guid: f9011d0162021214ba05ac1edf95c77c, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
-  - itemName: C
-    itemMesh: {fileID: -2837682660325928517, guid: d6551801671a20246bd68d36a632c81b, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
-  - itemName: D
-    itemMesh: {fileID: -8185155883099882650, guid: 49be3a60aa8589e43aec6d4131308fbf, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
-  - itemName: E
-    itemMesh: {fileID: 4247185880700759144, guid: f03558e025cc0ce4b99e2669c1a98d28, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
+  - itemName: Maletin
+    modelPrefab: {fileID: 919132149155446097, guid: 899cc56293932c344a8131230fe62bc4, type: 3}
+  - itemName: Taza de cafe
+    modelPrefab: {fileID: 919132149155446097, guid: ac3d5b5719f2be64e9723aedfafc8d63, type: 3}
+  - itemName: Control de tele
+    modelPrefab: {fileID: 919132149155446097, guid: 22a8bfd9a2cb0de428b2f99973c63a4f, type: 3}
+  - itemName: Borrador
+    modelPrefab: {fileID: 919132149155446097, guid: f882ce89ded2a024a95604d42a068b80, type: 3}
+  - itemName: Marcador
+    modelPrefab: {fileID: 919132149155446097, guid: 7798203a6a4a2364a99aee5c6c8ff8e0, type: 3}
+  - itemName: Cinta adhesiva
+    modelPrefab: {fileID: 919132149155446097, guid: a1be59baa3a013b4f84fcd113c957265, type: 3}
+  - itemName: Engrapadora
+    modelPrefab: {fileID: 919132149155446097, guid: 36fc8efe968ce1041b53d9d1f6f32ee0, type: 3}
+  - itemName: Telefono de linea
+    modelPrefab: {fileID: 919132149155446097, guid: 83703a701e9b5964aa48e21830599500, type: 3}
