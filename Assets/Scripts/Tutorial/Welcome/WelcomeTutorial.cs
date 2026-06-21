@@ -37,12 +37,7 @@ public class WelcomeTutorial : MonoBehaviour, ITutorial
         if (!other.CompareTag("Player")) return;
         StartCoroutine(FadeOutRoutine());
     }
-
-    [ContextMenu("Fade Out")]
-    private void FadeOut()
-    {
-        StartCoroutine(FadeOutRoutine());
-    }
+    
     private IEnumerator FadeOutRoutine()
     {
         float elapsed = 0f;
