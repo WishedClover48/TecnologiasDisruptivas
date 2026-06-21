@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -46,5 +47,6 @@ public class FindMG_UI : MonoBehaviour
         
         gameManager.OnItemCompleted -= ItemCompleted;
         gameManager.OnListCompleted -= ListCompleted;
+        PlayerManager.Instance.SceneTransition.TransitionFromActivity("SampleScene");
     }
 }
