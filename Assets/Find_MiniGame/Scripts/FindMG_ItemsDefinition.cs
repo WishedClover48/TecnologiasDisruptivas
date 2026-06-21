@@ -11,6 +11,5 @@ public class FindMG_ItemsDefinition : ScriptableObject
 [Serializable] public struct FindMG_ItemDefinition
 {
     public string itemName;
-    public Mesh itemMesh;
-    public Material[] itemMaterial;
+    public GameObject modelPrefab;
 }
