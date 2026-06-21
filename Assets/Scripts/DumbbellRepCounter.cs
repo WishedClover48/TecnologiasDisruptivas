@@ -185,7 +185,7 @@ public class DumbbellRepCounter : MonoBehaviour
         _holdingHand = hand;
         _baselineHeight = _trackedObject.position.y;
         _waitingForLower = false;
-        SetUiVisible(true);
+        SetUiVisible(false);
         UpdateStatus(IsHoldingWithRequiredHand() ? "Lift up" : $"Use your {HandToText(_requiredHand)} hand");
         GrabStateChanged?.Invoke(this, true, _holdingHand);
     }
@@ -218,7 +218,7 @@ public class DumbbellRepCounter : MonoBehaviour
         if (_currentReps >= _targetReps)
         {
             _completed = true;
-            SetUiVisible(true);
+            SetUiVisible(false);
             UpdateStatus("Workout complete");
             SetCompleted?.Invoke(this);
             _onCompleted?.Invoke();
