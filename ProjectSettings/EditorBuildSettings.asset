@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Activities/PagueSusCuentas.unity
     guid: a05b65e6306a6bd449c26d77961cfb35
+  - enabled: 1
+    path: Assets/Scenes/Activities/Market.unity
+    guid: 458408e32839bc7488799aa91bc8f538
+  - enabled: 1
+    path: Assets/Scenes/Activities/Office.unity
+    guid: 566029ef097731b4ea773cf8cf100a56
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 09d000168cfc36e4a8c77d973fde837c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

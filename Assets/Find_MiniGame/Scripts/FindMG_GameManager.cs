@@ -21,6 +21,10 @@ public class FindMG_GameManager
         {
             zone.OnItemDropped += TestItem;
         }
+        foreach (var item in ToDoList)
+        {
+            Debug.Log(item + "   Batata   \n");
+        }
     }
 
     private void TestItem(FindMG_Item item)
