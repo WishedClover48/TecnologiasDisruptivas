@@ -13,43 +13,23 @@ MonoBehaviour:
   m_Name: Market_ItemsDefinition
   m_EditorClassIdentifier: Assembly-CSharp::FindMG_ItemsDefinition
   items:
-  - itemName: Leche
-    itemMesh: {fileID: 2534964839176971238, guid: 301235fdf69a78e44906cfaa4976a7cf, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
-  - itemName: Pan
-    itemMesh: {fileID: -7759331768739107841, guid: f9011d0162021214ba05ac1edf95c77c, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
-  - itemName: Banana
-    itemMesh: {fileID: -2837682660325928517, guid: d6551801671a20246bd68d36a632c81b, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
-  - itemName: Queso
-    itemMesh: {fileID: -8185155883099882650, guid: 49be3a60aa8589e43aec6d4131308fbf, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
-  - itemName: Carne
-    itemMesh: {fileID: 4247185880700759144, guid: f03558e025cc0ce4b99e2669c1a98d28, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
   - itemName: Manazana
-    itemMesh: {fileID: 4247185880700759144, guid: f03558e025cc0ce4b99e2669c1a98d28, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
+    modelPrefab: {fileID: 919132149155446097, guid: 9a220668b9a80e740a904676e5312c75, type: 3}
+  - itemName: Banana
+    modelPrefab: {fileID: 919132149155446097, guid: a97358b6c674f234787d8d7b05c9789b, type: 3}
+  - itemName: Pan
+    modelPrefab: {fileID: 919132149155446097, guid: 5e0aadf056920e143ae3955b31f0c5e6, type: 3}
+  - itemName: Queso
+    modelPrefab: {fileID: 919132149155446097, guid: 09fe22963f4e72d43b9de276e1948fc3, type: 3}
   - itemName: Pollo
-    itemMesh: {fileID: 4247185880700759144, guid: f03558e025cc0ce4b99e2669c1a98d28, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
+    modelPrefab: {fileID: 919132149155446097, guid: a4994854822b0fc45afc77fcd3bc1790, type: 3}
   - itemName: Chocolate
-    itemMesh: {fileID: 4247185880700759144, guid: f03558e025cc0ce4b99e2669c1a98d28, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
+    modelPrefab: {fileID: 919132149155446097, guid: d06346ba9b0571e4d8b4b9d6dedb84c1, type: 3}
   - itemName: Huevos
-    itemMesh: {fileID: 4247185880700759144, guid: f03558e025cc0ce4b99e2669c1a98d28, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
+    modelPrefab: {fileID: 919132149155446097, guid: f70d148df382e38429d31dea5c6220fe, type: 3}
   - itemName: Jugo
-    itemMesh: {fileID: 4247185880700759144, guid: f03558e025cc0ce4b99e2669c1a98d28, type: 3}
-    itemMaterial:
-    - {fileID: 2100000, guid: 365de376faf7561438fd9dd6ebfb9b85, type: 2}
+    modelPrefab: {fileID: 919132149155446097, guid: 05e11ff5496dee943b54ab6cb83308a3, type: 3}
+  - itemName: Carne
+    modelPrefab: {fileID: 919132149155446097, guid: f8f31dd267295f443bc024172f65b72b, type: 3}
+  - itemName: Leche
+    modelPrefab: {fileID: 919132149155446097, guid: dad1e523b3b2baf41a6ddf9759d446a8, type: 3}
