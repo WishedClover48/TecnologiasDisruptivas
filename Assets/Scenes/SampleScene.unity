@@ -22242,6 +22242,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1950501207}
     - target: {fileID: 4048797420506311199, guid: 1621c599ef9af694abd9176db040049e, type: 3}
+      propertyPath: videoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 32b7311069886ba4ba250f56c76a7f03, type: 3}
+    - target: {fileID: 4048797420506311199, guid: 1621c599ef9af694abd9176db040049e, type: 3}
       propertyPath: onAcknowledged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1734287419}
