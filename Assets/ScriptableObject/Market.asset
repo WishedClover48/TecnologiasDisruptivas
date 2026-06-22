@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075f4c1b06facd64fbbe1d8671b42812, type: 3}
   m_Name: Market
   m_EditorClassIdentifier: Assembly-CSharp::ActivitySO
-  activityName: Market
+  activityName: IrAlSupermercado
   activityDescription: very nice
   activityFlavorText: cesa chan
   timeCost: 3

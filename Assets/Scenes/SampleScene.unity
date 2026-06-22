@@ -753,6 +753,59 @@ RectTransform:
   m_AnchoredPosition: {x: 300, y: -735}
   m_SizeDelta: {x: 520, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &41872298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 41872299}
+  - component: {fileID: 41872300}
+  m_Layer: 0
+  m_Name: BathroomWallCollision (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &41872299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41872298}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70710546, z: -0, w: 0.7071082}
+  m_LocalPosition: {x: 2.606, y: 0, z: 1.64}
+  m_LocalScale: {x: 0.37246, y: 1, z: 0.088385925}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 334618725}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &41872300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41872298}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.56584513, y: 3.701282, z: 4.7521296}
+  m_Center: {x: -0.21709906, y: 1.819611, z: -0.23926646}
 --- !u!1 &42213972
 GameObject:
   m_ObjectHideFlags: 0
@@ -5612,6 +5665,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 20707663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &606876579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 606876580}
+  - component: {fileID: 606876581}
+  m_Layer: 0
+  m_Name: BathroomWallCollision (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &606876580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606876579}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70710546, z: -0, w: 0.7071082}
+  m_LocalPosition: {x: 4.19, y: 0, z: -1.428}
+  m_LocalScale: {x: 0.44044, y: 1, z: 0.6938121}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 334618725}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &606876581
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606876579}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.56584513, y: 3.701282, z: 4.7521296}
+  m_Center: {x: -0.21709906, y: 1.819611, z: -0.23926646}
 --- !u!1 &609832852
 GameObject:
   m_ObjectHideFlags: 0
@@ -6048,6 +6154,59 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1196850320}
   m_SourcePrefab: {fileID: 100100000, guid: eca1c6bd0f1cf6343808586af38c04f0, type: 3}
+--- !u!1 &671435280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 671435281}
+  - component: {fileID: 671435282}
+  m_Layer: 0
+  m_Name: BathroomWallCollision (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &671435281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671435280}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70710546, z: -0, w: 0.7071082}
+  m_LocalPosition: {x: 4.515, y: 0, z: 1.64}
+  m_LocalScale: {x: 0.37246, y: 1, z: 0.26844978}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 334618725}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &671435282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671435280}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.56584513, y: 3.701282, z: 4.7521296}
+  m_Center: {x: -0.21709906, y: 1.819611, z: -0.23926646}
 --- !u!1 &673906027
 GameObject:
   m_ObjectHideFlags: 0
@@ -11527,6 +11686,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
       insertIndex: 0
       addedObject: {fileID: 488399251}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1259514187}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 606876580}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 671435281}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 41872299}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6900980884616141945, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
       insertIndex: -1
@@ -11672,6 +11843,59 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 823216198}
   m_SourcePrefab: {fileID: 100100000, guid: 4b16046cc2e1a3c42b296af0ee2e5aca, type: 3}
+--- !u!1 &1259514186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259514187}
+  - component: {fileID: 1259514188}
+  m_Layer: 0
+  m_Name: BathroomWallCollision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259514187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259514186}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.00000068545336, z: -0, w: 1}
+  m_LocalPosition: {x: 2.513, y: 0, z: 0.35}
+  m_LocalScale: {x: 0.41111556, y: 1, z: 0.69381225}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 334618725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1259514188
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259514186}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.56584513, y: 3.701282, z: 4.7521296}
+  m_Center: {x: -0.21709906, y: 1.819611, z: -0.23926646}
 --- !u!1 &1261504223
 GameObject:
   m_ObjectHideFlags: 0

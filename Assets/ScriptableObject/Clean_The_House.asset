@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075f4c1b06facd64fbbe1d8671b42812, type: 3}
   m_Name: Clean_The_House
   m_EditorClassIdentifier: Assembly-CSharp::ActionData_SO
-  activityName: CleanTheHouse
+  activityName: LimpiarLaCasa
   activityDescription: Throw trash into the garbage can
   activityFlavorText: Throw trash into the garbage can
   timeCost: 0

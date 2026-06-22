@@ -12,16 +12,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Activities/Gym.unity
     guid: d0676b23b9ca3f941b29a42fd79e1988
   - enabled: 1
-    path: Assets/Scenes/Activities/CleanTheHouse.unity
+    path: Assets/Scenes/Activities/LimpiarLaCasa.unity
     guid: 536416e66511a3d4bb4b643de40a595a
   - enabled: 1
     path: Assets/Scenes/Activities/PagueSusCuentas.unity
     guid: a05b65e6306a6bd449c26d77961cfb35
   - enabled: 1
-    path: Assets/Scenes/Activities/Market.unity
+    path: Assets/Scenes/Activities/IrAlSupermercado.unity
     guid: 458408e32839bc7488799aa91bc8f538
   - enabled: 1
-    path: Assets/Scenes/Activities/Office.unity
+    path: Assets/Scenes/Activities/HacerHorasExtras.unity
     guid: 566029ef097731b4ea773cf8cf100a56
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 09d000168cfc36e4a8c77d973fde837c, type: 2}
