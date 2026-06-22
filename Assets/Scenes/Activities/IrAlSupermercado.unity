@@ -18891,10 +18891,22 @@ MonoBehaviour:
   showOnStart: 1
   pauseWhileShown: 0
   enableOnAcknowledge:
-  - {fileID: 1403270632}
+  - {fileID: 1403270633}
   onAcknowledged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1403270632}
+        m_TargetAssemblyTypeName: FindMG_GameInitalizer, Assembly-CSharp
+        m_MethodName: BeginGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1259576118
 Transform:
   m_ObjectHideFlags: 0
@@ -21411,6 +21423,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 928382569980570284, guid: ee05e6d5c6fc8ae4ebb43844aa0aefc2, type: 3}
+      propertyPath: startOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 928382569980570284, guid: ee05e6d5c6fc8ae4ebb43844aa0aefc2, type: 3}
       propertyPath: config.possibleSpawnPoints.Array.size
       value: 13
       objectReference: {fileID: 0}
@@ -21823,9 +21839,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4822029821138900523, guid: ee05e6d5c6fc8ae4ebb43844aa0aefc2, type: 3}
   m_PrefabInstance: {fileID: 1403270627}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1403270632 stripped
+--- !u!114 &1403270632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 928382569980570284, guid: ee05e6d5c6fc8ae4ebb43844aa0aefc2, type: 3}
+  m_PrefabInstance: {fileID: 1403270627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78243863f5bccd1458f4d523572a226d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindMG_GameInitalizer
+--- !u!1 &1403270633 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6038257115585536701, guid: ee05e6d5c6fc8ae4ebb43844aa0aefc2, type: 3}
+  m_CorrespondingSourceObject: {fileID: 696102514077759977, guid: ee05e6d5c6fc8ae4ebb43844aa0aefc2, type: 3}
   m_PrefabInstance: {fileID: 1403270627}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1404053627

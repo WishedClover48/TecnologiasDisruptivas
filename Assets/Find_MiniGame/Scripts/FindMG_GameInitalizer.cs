@@ -15,10 +15,16 @@ public class FindMG_GameInitalizer : MonoBehaviour
         [Space] public FindMG_UI ui;
     }
     [SerializeField] private FindMG_StartingConfiguration config;
-    
+    [SerializeField] private bool startOnAwake = true;
+
     private List<FindMG_Item> toDoList;
 
     private void Start()
+    {
+        if (startOnAwake) BeginGame();
+    }
+
+    public void BeginGame()
     {
         var itemPool = new List<FindMG_ItemDefinition>(config.possibleItems.items);
         var spawnPoints = new List<FindMG_Item>(config.possibleSpawnPoints);
