@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 075f4c1b06facd64fbbe1d8671b42812, type: 3}
-  m_Name: Watch TV
+  m_Name: WatchTV
   m_EditorClassIdentifier: Assembly-CSharp::ActivitySO
-  activityName: Watch TV
+  activityName: WatchTV
   activityDescription: very nice
   activityFlavorText: cesa chan
   timeCost: 2
