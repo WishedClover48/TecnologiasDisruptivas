@@ -9,8 +9,6 @@ using UnityEngine;
 /// </summary>
 public class UI_Phone : MonoBehaviour
 {
-    public static UI_Phone Instance { get; private set; }
-
     // ── Header section ────────────────────────────────────────────────────
     [Header("Header")]
     [Tooltip("e.g. 'Day 2 / 4'")]
@@ -45,13 +43,6 @@ public class UI_Phone : MonoBehaviour
     private DayTimeManager dtm;
 
     // ── Lifecycle ─────────────────────────────────────────────────────────
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 
     private void Start()
     {
