@@ -116,11 +116,15 @@ public class PageSusCuentasMinigame : MonoBehaviour
             Debug.Log(PagosCorrectos);
             if (ExitTimer <= 0)
             {
-                if(TaskCompleted<Results.Count)
+                if (TaskCompleted < Results.Count)
+                {
                     PlayerManager.Instance.ApplyActivity(Results[TaskCompleted]);
+                }
                 else
-                    PlayerManager.Instance.ApplyActivity(Results[Results.Count-1]);
-                SceneManager.LoadScene(0);
+                {
+                    PlayerManager.Instance.ApplyActivity(Results[Results.Count - 1]);
+                }
+                    PlayerManager.Instance.SceneTransition.TransitionFromActivity("SampleScene");
             }
         }
     }

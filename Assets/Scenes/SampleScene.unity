@@ -10466,7 +10466,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2169664028575430555, guid: 82480e23bb3bae24f9b76a7a634599f2, type: 3}
       propertyPath: currentMoney
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3819815479904665089, guid: 82480e23bb3bae24f9b76a7a634599f2, type: 3}
       propertyPath: m_Name
@@ -17769,11 +17769,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4326564346746918008, guid: b6924baaf89f0b449b61201a8ff75e30, type: 3}
       propertyPath: maxHoursPerDay
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4326564346746918008, guid: b6924baaf89f0b449b61201a8ff75e30, type: 3}
       propertyPath: minHoursPerDay
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4789576960017922184, guid: b6924baaf89f0b449b61201a8ff75e30, type: 3}
       propertyPath: m_LocalPosition.x
