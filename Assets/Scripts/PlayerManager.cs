@@ -85,16 +85,12 @@ namespace DefaultNamespace
                 return;
             }
 
-            // Subtract costs
-            dayTimeManager.SpendTime(actionData.TimeCost);
             currentMoney -= actionData.MoneyCost;
 
-            // Apply effects
             currentFinance += actionData.Finance;
             currentHealth += actionData.Health;
             currentStress += actionData.Stress;
 
-            // Clamp values to reasonable ranges
             currentHealth = Mathf.Clamp(currentHealth, 0, 100);
             currentStress = Mathf.Clamp(currentStress, 0, 100);
             currentFinance = Mathf.Clamp(currentFinance, 0, 100);
