@@ -1593,6 +1593,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159076267}
   m_CullTransparentMesh: 1
+--- !u!1 &163802912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 163802914}
+  - component: {fileID: 163802913}
+  m_Layer: 0
+  m_Name: DayTransition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &163802913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163802912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1d92f42399a42499ce75db9636b3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DayTransitionFade
+  onDayEnded: {fileID: 11400000, guid: 79f1b987be866584b998c6425d0e0c95, type: 2}
+  fadeOutDuration: 1.2
+  holdDuration: 0.6
+  fadeInDuration: 1.4
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  autoAddScreenFade: 1
+--- !u!4 &163802914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163802912}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &163816426
 GameObject:
   m_ObjectHideFlags: 0
@@ -4415,6 +4465,7 @@ GameObject:
   - component: {fileID: 447298122}
   - component: {fileID: 447298121}
   - component: {fileID: 447298123}
+  - component: {fileID: 447298124}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -4540,6 +4591,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &447298124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447298119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.VR::OVRScreenFade
+  fadeTime: 2
+  fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  fadeOnStart: 0
+  renderQueue: 5000
 --- !u!1 &448305841
 GameObject:
   m_ObjectHideFlags: 0
@@ -17507,15 +17574,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4326564346746918008, guid: b6924baaf89f0b449b61201a8ff75e30, type: 3}
       propertyPath: totalDays
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4326564346746918008, guid: b6924baaf89f0b449b61201a8ff75e30, type: 3}
       propertyPath: maxHoursPerDay
-      value: 6
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4326564346746918008, guid: b6924baaf89f0b449b61201a8ff75e30, type: 3}
       propertyPath: minHoursPerDay
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4789576960017922184, guid: b6924baaf89f0b449b61201a8ff75e30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22000,6 +22067,7 @@ SceneRoots:
   - {fileID: 488621746}
   - {fileID: 412925076}
   - {fileID: 2125536485}
+  - {fileID: 163802914}
   - {fileID: 1330211038}
   - {fileID: 1285188891}
   - {fileID: 6752362460782934307}
