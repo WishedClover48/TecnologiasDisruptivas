@@ -15,7 +15,7 @@ MonoBehaviour:
   activityName: LimpiarLaCasa
   activityDescription: Throw trash into the garbage can
   activityFlavorText: Throw trash into the garbage can
-  timeCost: 0
+  timeCost: 3
   moneyCost: 0
   finance: 0
   health: 10

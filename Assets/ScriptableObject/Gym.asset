@@ -19,4 +19,4 @@ MonoBehaviour:
   moneyCost: 0
   finance: 0
   health: 20
-  stress: 20
+  stress: -5
