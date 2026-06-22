@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -80,7 +81,7 @@ public class TVMinigameController : MonoBehaviour
     {
         _completed = true;
         Debug.Log("Minijuego TV completado!");
-        onActivityDone.RaiseEvent(activityData);
+        PlayerManager.Instance.ApplyActivity(activityData);
         SceneManager.LoadScene(0);
     }
 }
