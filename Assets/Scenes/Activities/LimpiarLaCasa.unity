@@ -12289,9 +12289,9 @@ MonoBehaviour:
   showOnStart: 1
   pauseWhileShown: 0
   enableOnAcknowledge:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1502178727}
+  - {fileID: 207552756}
+  - {fileID: 809052978}
   onAcknowledged:
     m_PersistentCalls:
       m_Calls: []
