@@ -20,6 +20,14 @@ public class UI_GameEndFeedback : MonoBehaviour
     [SerializeField] private float spawnDistance = 1.5f;
     [SerializeField] private float heightOffset  = -0.1f;
 
+    [Header("Spot fijo de fin de juego (opcional)")]
+    [Tooltip("Si se asigna, al terminar el juego el panel aparece SIEMPRE acá (no frente a la mirada) " +
+             "y el jugador es teletransportado a este punto. El panel sale a 'spawnDistance' adelante.")]
+    [SerializeField] private Transform endGameAnchor;
+    [Tooltip("El TPPlayer (objeto 'SetPlayerPosition') que teletransporta el rig. Reusa su lógica " +
+             "(offset de cámara + desactivar CharacterController + mirar al panel). Si queda vacío, no teletransporta.")]
+    [SerializeField] private TPPlayer tpPlayer;
+
     [Header("Global Events")]
     [SerializeField] private GlobalEventSO_Void onGameEnded;
 
@@ -61,7 +69,7 @@ public class UI_GameEndFeedback : MonoBehaviour
             pm.Health, pm.Stress, pm.Finance);
 
         Populate(result);
-        PlaceInFrontOfPlayer();
+        PlaceEndScreen();
 
         if (panelRoot != null) panelRoot.SetActive(true);
 
@@ -69,7 +77,7 @@ public class UI_GameEndFeedback : MonoBehaviour
             foreach (var go in hideWhileShown)
                 if (go != null) go.SetActive(false);
 
-        Time.timeScale = 0f;
+        // sin Time.timeScale = 0: en VR congela el ray del control y rompe los botones del panel.
     }
 
     private void Populate(GameResultEvaluator.Result r)
@@ -112,6 +120,34 @@ public class UI_GameEndFeedback : MonoBehaviour
         t.rotation = Quaternion.LookRotation(fwd, Vector3.up);
     }
 
+    private void PlaceEndScreen()
+    {
+        if (panelRoot == null) return;
+
+        if (endGameAnchor == null)
+        {
+            PlaceInFrontOfPlayer();
+            return;
+        }
+
+        Vector3 fwd = endGameAnchor.forward;
+        fwd.y = 0f;
+        if (fwd.sqrMagnitude < 0.0001f) fwd = Vector3.forward;
+        fwd.Normalize();
+
+        if (tpPlayer != null) tpPlayer.TeleportSafely(endGameAnchor.position, fwd);
+
+        Transform cam = ResolveCameraTransform();
+        float eyeY = cam != null ? cam.position.y : endGameAnchor.position.y;
+
+        Vector3 pos = endGameAnchor.position + fwd * spawnDistance;
+        pos.y = eyeY + heightOffset;
+
+        Transform t = panelRoot.transform;
+        t.position = pos;
+        t.rotation = Quaternion.LookRotation(fwd, Vector3.up);
+    }
+
     private Transform ResolveCameraTransform()
     {
         var anchor = GameObject.Find("CenterEyeAnchor");
@@ -119,7 +155,7 @@ public class UI_GameEndFeedback : MonoBehaviour
 
         if (Camera.main != null) return Camera.main.transform;
 
-        var anyCam = FindObjectOfType<Camera>();
+        var anyCam = FindAnyObjectByType<Camera>();
         return anyCam != null ? anyCam.transform : null;
     }
 

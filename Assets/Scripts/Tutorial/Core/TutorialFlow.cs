@@ -6,8 +6,17 @@ public class TutorialFlow : MonoBehaviour
     [SerializeField] private ActivityTutorial activityTutorial;
     [SerializeField] private PhoneTutorial phoneTutorial;
 
+    private static bool hasShownWelcome;
+
     private void Start()
     {
+        if (hasShownWelcome)
+        {
+            OnWelcomeComplete();
+            return;
+        }
+
+        hasShownWelcome = true;
         welcomeTutorial.onComplete = OnWelcomeComplete;
         welcomeTutorial.Activate();
     }

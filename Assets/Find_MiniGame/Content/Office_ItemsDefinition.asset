@@ -21,11 +21,11 @@ MonoBehaviour:
     modelPrefab: {fileID: 919132149155446097, guid: 22a8bfd9a2cb0de428b2f99973c63a4f, type: 3}
   - itemName: Borrador
     modelPrefab: {fileID: 919132149155446097, guid: f882ce89ded2a024a95604d42a068b80, type: 3}
-  - itemName: Marcador
-    modelPrefab: {fileID: 919132149155446097, guid: 7798203a6a4a2364a99aee5c6c8ff8e0, type: 3}
-  - itemName: Cinta adhesiva
-    modelPrefab: {fileID: 919132149155446097, guid: a1be59baa3a013b4f84fcd113c957265, type: 3}
-  - itemName: Engrapadora
-    modelPrefab: {fileID: 919132149155446097, guid: 36fc8efe968ce1041b53d9d1f6f32ee0, type: 3}
+  - itemName: Proyector
+    modelPrefab: {fileID: 919132149155446097, guid: 1f752766ac74c0347be73f3e56c00f52, type: 3}
+  - itemName: Impresora
+    modelPrefab: {fileID: 919132149155446097, guid: 5846a56ffa683e049ad42f729aad2f93, type: 3}
+  - itemName: Base de telefono
+    modelPrefab: {fileID: 919132149155446097, guid: 772f83ccdfde9904d85d22d3313793b1, type: 3}
   - itemName: Telefono de linea
     modelPrefab: {fileID: 919132149155446097, guid: 83703a701e9b5964aa48e21830599500, type: 3}
