@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DayTransitionFade : MonoBehaviour
 {
@@ -13,11 +14,15 @@ public class DayTransitionFade : MonoBehaviour
 
     [Header("Fade")]
     [SerializeField] private Color fadeColor = Color.black;
-    [Tooltip("Si la cámara VR no tiene OVRScreenFade, se agrega automáticamente.")]
-    [SerializeField] private bool autoAddScreenFade = true;
 
-    private OVRScreenFade fade;
-    private Coroutine     routine;
+    [Header("Overlay (pegado a la cámara)")]
+    [Tooltip("Distancia del overlay frente a la cámara (m). Suficientemente cerca para tapar todo.")]
+    [SerializeField] private float overlayDistance = 0.2f;
+    [Tooltip("Lado del overlay en metros (debe cubrir todo el FOV).")]
+    [SerializeField] private float overlaySize = 3f;
+
+    private Image     overlay;
+    private Coroutine routine;
 
     private void OnEnable()
     {
@@ -40,49 +45,53 @@ public class DayTransitionFade : MonoBehaviour
 
     public void PlaySleepCycle()
     {
-        if (!EnsureFade()) return;
+        if (!EnsureOverlay()) return;
         if (routine != null) StopCoroutine(routine);
         routine = StartCoroutine(SleepCycle());
     }
 
-    private bool EnsureFade()
+    private bool EnsureOverlay()
     {
-        if (fade != null) return true;
+        if (overlay != null) return true;
 
-        fade = OVRScreenFade.instance;
-
-        if (fade == null && autoAddScreenFade)
+        Transform cam = ResolveCamera();
+        if (cam == null)
         {
-            var camGO = ResolveCameraGO();
-            if (camGO != null)
-            {
-                fade = camGO.GetComponent<OVRScreenFade>();
-                if (fade == null)
-                {
-                    fade = camGO.AddComponent<OVRScreenFade>();
-                    fade.fadeOnStart = false;
-                }
-            }
+            Debug.LogWarning("[DayTransitionFade] No se encontró la cámara VR (CenterEyeAnchor).");
+            return false;
         }
 
-        if (fade != null)
-        {
-            fade.fadeColor = fadeColor;
-            fade.SetExplicitFade(0f);
-            return true;
-        }
+        var go = new GameObject("DayFadeOverlay");
+        go.transform.SetParent(cam, false);
+        go.transform.localPosition = new Vector3(0f, 0f, overlayDistance);
+        go.transform.localRotation = Quaternion.identity;
 
-        Debug.LogWarning("[DayTransitionFade] No se encontró OVRScreenFade ni una cámara VR.");
-        return false;
+        var canvas = go.AddComponent<Canvas>();
+        canvas.renderMode  = RenderMode.WorldSpace;
+        canvas.sortingOrder = 32760;
+
+        var rt = go.GetComponent<RectTransform>();
+        rt.sizeDelta  = new Vector2(overlaySize, overlaySize) * 1000f;
+        rt.localScale = Vector3.one * 0.001f;
+
+        overlay = go.AddComponent<Image>();
+        overlay.raycastTarget = false;
+        SetAlpha(0f);
+        return true;
     }
 
-    private GameObject ResolveCameraGO()
+    private Transform ResolveCamera()
     {
         var anchor = GameObject.Find("CenterEyeAnchor");
-        if (anchor != null) return anchor;
-        if (Camera.main != null) return Camera.main.gameObject;
+        if (anchor != null) return anchor.transform;
+        if (Camera.main != null) return Camera.main.transform;
         var cam = FindAnyObjectByType<Camera>();
-        return cam != null ? cam.gameObject : null;
+        return cam != null ? cam.transform : null;
+    }
+
+    private void SetAlpha(float a)
+    {
+        overlay.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, Mathf.Clamp01(a));
     }
 
     private IEnumerator SleepCycle()
@@ -102,13 +111,11 @@ public class DayTransitionFade : MonoBehaviour
 
     private IEnumerator FadeTo(float target, float duration)
     {
-        if (fade == null) yield break;
-
-        float start = fade.currentAlpha;
+        float start = overlay.color.a;
 
         if (duration <= 0f)
         {
-            fade.SetExplicitFade(target);
+            SetAlpha(target);
             yield break;
         }
 
@@ -116,9 +123,9 @@ public class DayTransitionFade : MonoBehaviour
         while (t < duration)
         {
             t += Time.unscaledDeltaTime;
-            fade.SetExplicitFade(Mathf.Lerp(start, target, t / duration));
+            SetAlpha(Mathf.Lerp(start, target, t / duration));
             yield return null;
         }
-        fade.SetExplicitFade(target);
+        SetAlpha(target);
     }
 }
