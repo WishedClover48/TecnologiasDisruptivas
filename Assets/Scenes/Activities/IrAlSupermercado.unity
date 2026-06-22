@@ -18877,14 +18877,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigameTutorial
   titleText: Tutorial
-  descriptionText: 
-  videoClip: {fileID: 0}
+  descriptionText: "Revisa tu lista de compras, encuentra el producto indicado y
+    col\xF3calo en el carrito."
+  videoClip: {fileID: 32900000, guid: dcfe6de27f86cfd4cb95162844319f6c, type: 3}
   panelRoot: {fileID: 628817416}
   titleLabel: {fileID: 1542783838}
   descriptionLabel: {fileID: 1525216007}
   videoImage: {fileID: 1677601372}
   videoPlayer: {fileID: 1677601368}
-  placeInFrontOfPlayer: 1
+  placeInFrontOfPlayer: 0
   spawnDistance: 1.6
   heightOffset: 0
   showOnStart: 1

@@ -12532,7 +12532,7 @@ MonoBehaviour:
   descriptionText: "Junt\xE1 la basura que hay por el departamento y l\xE1nzala hacia
     el tacho de basura, intentando que entre dentro de este. Una vez que hayas tirado
     toda la basura terminar\xE1 el minijuego."
-  videoClip: {fileID: 32900000, guid: aed64fd0de57cb6418d9625a37dbe128, type: 3}
+  videoClip: {fileID: 32900000, guid: ce192022616cf8e4b9e6325ae1a3e206, type: 3}
   panelRoot: {fileID: 2121803097}
   titleLabel: {fileID: 719814278}
   descriptionLabel: {fileID: 1918152028}
