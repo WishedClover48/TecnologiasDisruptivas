@@ -1627,7 +1627,8 @@ MonoBehaviour:
   holdDuration: 0.6
   fadeInDuration: 1.4
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
-  autoAddScreenFade: 1
+  overlayDistance: 0.2
+  overlaySize: 3
 --- !u!4 &163802914
 Transform:
   m_ObjectHideFlags: 0
@@ -4465,7 +4466,6 @@ GameObject:
   - component: {fileID: 447298122}
   - component: {fileID: 447298121}
   - component: {fileID: 447298123}
-  - component: {fileID: 447298124}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -4591,22 +4591,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &447298124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447298119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Oculus.VR::OVRScreenFade
-  fadeTime: 2
-  fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
-  fadeOnStart: 0
-  renderQueue: 5000
 --- !u!1 &448305841
 GameObject:
   m_ObjectHideFlags: 0
