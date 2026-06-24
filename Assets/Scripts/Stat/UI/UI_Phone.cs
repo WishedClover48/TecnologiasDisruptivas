@@ -27,6 +27,8 @@ public class UI_Phone : MonoBehaviour
     // ── Money display ─────────────────────────────────────────────────────
     [Header("Money")]
     [SerializeField] private TMP_Text moneyLabel;
+    [Tooltip("Dinero considerado 'lleno' para la barra (100%). Igual al del end-feedback.")]
+    [SerializeField] private int idealMoney = 1000;
 
     // ── History ───────────────────────────────────────────────────────────
     [Header("History")]
@@ -102,13 +104,13 @@ public class UI_Phone : MonoBehaviour
 
     private void RefreshStatBars()
     {
-        float health  = pm.Health  / 100f;
-        float mental  = 1f - (pm.Stress  / 100f);   // high stress → low mental
-        float finance = pm.Finance / 100f;
+        float health = pm.Health / 100f;
+        float mental = 1f - (pm.Stress / 100f);   // high stress → low mental
+        float money  = Mathf.Clamp01((float)pm.Money / Mathf.Max(idealMoney, 1));
 
-        healthBar?.SetValue(health,  $"{pm.Health}%");
-        mentalHealthBar?.SetValue(mental,  $"{Mathf.RoundToInt(mental  * 100)}%");
-        financeBar?.SetValue(finance, $"{pm.Finance}%");
+        healthBar?.SetValue(health, $"{pm.Health}%");
+        mentalHealthBar?.SetValue(mental, $"{Mathf.RoundToInt(mental * 100)}%");
+        financeBar?.SetValue(money, $"{Mathf.RoundToInt(money * 100)}%");
     }
 
     private void RefreshMoney()
