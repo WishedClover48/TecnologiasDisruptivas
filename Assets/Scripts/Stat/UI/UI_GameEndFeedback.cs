@@ -18,7 +18,7 @@ public class UI_GameEndFeedback : MonoBehaviour
 
     [Header("Scoring")]
     [Tooltip("Dinero considerado 'ideal' (puntaje 100). Default = dinero inicial.")]
-    [SerializeField] private int idealMoney = 1000;
+    [SerializeField] private int idealMoney = 50;
 
     [Header("Placement")]
     [SerializeField] private float spawnDistance = 1.5f;

@@ -10504,6 +10504,10 @@ PrefabInstance:
       propertyPath: currentMoney
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2169664028575430555, guid: 82480e23bb3bae24f9b76a7a634599f2, type: 3}
+      propertyPath: currentFinance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3819815479904665089, guid: 82480e23bb3bae24f9b76a7a634599f2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -12629,6 +12633,7 @@ MonoBehaviour:
   headlineLabel: {fileID: 1976044702}
   detailLabel: {fileID: 1603248510}
   summaryLabel: {fileID: 36435584}
+  idealMoney: 50
   spawnDistance: 1.5
   heightOffset: -0.2
   endGameAnchor: {fileID: 1285188891}
@@ -19262,6 +19267,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8106484811362382398, guid: 8c939529cd39feb4eb4309fd5fc1ddb2, type: 3}
+      propertyPath: m_text
+      value: $
+      objectReference: {fileID: 0}
     - target: {fileID: 8407664978144711145, guid: 8c939529cd39feb4eb4309fd5fc1ddb2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -19309,6 +19318,10 @@ PrefabInstance:
     - target: {fileID: 8791663338647206573, guid: 8c939529cd39feb4eb4309fd5fc1ddb2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973318425425897759, guid: 8c939529cd39feb4eb4309fd5fc1ddb2, type: 3}
+      propertyPath: m_text
+      value: :D
       objectReference: {fileID: 0}
     - target: {fileID: 9144339044393058953, guid: 8c939529cd39feb4eb4309fd5fc1ddb2, type: 3}
       propertyPath: m_AnchorMax.y

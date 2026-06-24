@@ -47,8 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.PlayerManager
   currentHealth: 90
   currentStress: 0
-  currentFinance: 100
-  currentMoney: 9999999
+  currentMoney: 25
   selectedActivities: []
   onActivityApplied: {fileID: 11400000, guid: 60fa87abbf62e1e46a2d881b30596245, type: 2}
   sceneTransition: {fileID: 7092138663603930797}
