@@ -28,7 +28,7 @@ public class UI_Phone : MonoBehaviour
     [Header("Money")]
     [SerializeField] private TMP_Text moneyLabel;
     [Tooltip("Dinero considerado 'lleno' para la barra (100%). Igual al del end-feedback.")]
-    [SerializeField] private int idealMoney = 1000;
+    [SerializeField] private int idealMoney = 50;
 
     // ── History ───────────────────────────────────────────────────────────
     [Header("History")]
