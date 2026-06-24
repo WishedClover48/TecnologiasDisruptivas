@@ -17,6 +17,6 @@ MonoBehaviour:
   activityFlavorText: cesa chan
   timeCost: 2
   moneyCost: 0
-  finance: 20
+  finance: 0
   health: 0
-  stress: 0
+  stress: 5

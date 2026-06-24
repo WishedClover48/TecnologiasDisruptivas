@@ -26,6 +26,7 @@ public class PageSusCuentasMinigame : MonoBehaviour
     private int PagosCorrectos=0;
     private int TaskCompleted=0;
     private List<Pago> pagos=new List<Pago>();
+    private bool _gameFinished = false;
     
     
     
@@ -114,15 +115,18 @@ public class PageSusCuentasMinigame : MonoBehaviour
             timer = 0;
             ExitTimer -= Time.deltaTime;
             Debug.Log(PagosCorrectos);
-            if (ExitTimer <= 0)
+            if (ExitTimer <= 0 && !_gameFinished)
             {
+                _gameFinished = true;
                 if (TaskCompleted < Results.Count)
                 {
-                    PlayerManager.Instance.ApplyActivity(Results[TaskCompleted]);
+                    PlayerManager.Instance.SceneTransition.SetCurrentActivity(Results[TaskCompleted]);
+                    //PlayerManager.Instance.ApplyActivity(Results[TaskCompleted]);
                 }
                 else
                 {
-                    PlayerManager.Instance.ApplyActivity(Results[Results.Count - 1]);
+                    PlayerManager.Instance.SceneTransition.SetCurrentActivity(Results[Results.Count - 1]);
+                    //PlayerManager.Instance.ApplyActivity(Results[Results.Count - 1]);
                 }
                     PlayerManager.Instance.SceneTransition.TransitionFromActivity("SampleScene");
             }

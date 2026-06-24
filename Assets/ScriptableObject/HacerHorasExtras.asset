@@ -15,8 +15,8 @@ MonoBehaviour:
   activityName: HacerHorasExtras
   activityDescription: very nice
   activityFlavorText: cesa chan
-  timeCost: 3
-  moneyCost: -20
+  timeCost: 1
+  moneyCost: -10
   finance: 0
   health: -5
   stress: 10

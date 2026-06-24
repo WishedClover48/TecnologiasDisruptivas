@@ -24,7 +24,6 @@ namespace DefaultNamespace
 
         private int initialHealth, initialStress, initialFinance, initialMoney;
 
-
         public int Health => currentHealth;
         public int Stress => currentStress;
         public int Finance => currentFinance;
@@ -74,6 +73,14 @@ namespace DefaultNamespace
 
         public bool CanAffordActivity(ActionData_SO actionData)
         {
+            if (!(dayTimeManager.RemainingHours >= actionData.TimeCost))
+            {
+                Debug.Log($"Cannot afford activity: TIME");
+            }
+            if (!(currentMoney >= actionData.MoneyCost))
+            {
+                Debug.Log($"Cannot afford activity: MONEY");
+            }
             return dayTimeManager.RemainingHours >= actionData.TimeCost && currentMoney >= actionData.MoneyCost;
         }
 

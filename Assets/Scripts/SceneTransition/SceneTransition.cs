@@ -11,9 +11,15 @@ public class SceneTransition : MonoBehaviour
 
     public void TransitionToActivity(ActionData_SO activity)
     {
-        PlayerManager.Instance.CurrentActivity = activity;
+        //PlayerManager.Instance.CurrentActivity = activity;
         //StartCoroutine(RunTransitionEffect(activity.ActivityName));
+        SetCurrentActivity(activity);
         LoadScene(activity.ActivityName);
+    }
+
+    public void SetCurrentActivity(ActionData_SO activity)
+    {
+        PlayerManager.Instance.CurrentActivity = activity;
     }
 
     public void TransitionFromActivity(string sceneName)
