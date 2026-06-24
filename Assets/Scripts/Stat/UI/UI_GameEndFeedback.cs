@@ -16,6 +16,10 @@ public class UI_GameEndFeedback : MonoBehaviour
     [SerializeField] private TMP_Text detailLabel;
     [SerializeField] private TMP_Text summaryLabel;
 
+    [Header("Scoring")]
+    [Tooltip("Dinero considerado 'ideal' (puntaje 100). Default = dinero inicial.")]
+    [SerializeField] private int idealMoney = 1000;
+
     [Header("Placement")]
     [SerializeField] private float spawnDistance = 1.5f;
     [SerializeField] private float heightOffset  = -0.1f;
@@ -66,7 +70,7 @@ public class UI_GameEndFeedback : MonoBehaviour
         }
 
         GameResultEvaluator.Result result = GameResultEvaluator.Evaluate(
-            pm.Health, pm.Stress, pm.Finance);
+            pm.Health, pm.Stress, pm.Money, idealMoney);
 
         Populate(result);
         PlaceEndScreen();

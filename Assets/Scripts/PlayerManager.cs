@@ -9,7 +9,6 @@ namespace DefaultNamespace
         [Header("Player Stats")]
         [SerializeField] private int currentHealth = 100;
         [SerializeField] private int currentStress = 0;
-        [SerializeField] private int currentFinance = 100;
         [SerializeField] private int currentMoney = 1000;
 
         [Header("Selected Activities")]
@@ -22,11 +21,10 @@ namespace DefaultNamespace
         private DayTimeManager dayTimeManager;
         private ActionData_SO currentActivity;
 
-        private int initialHealth, initialStress, initialFinance, initialMoney;
+        private int initialHealth, initialStress, initialMoney;
 
         public int Health => currentHealth;
         public int Stress => currentStress;
-        public int Finance => currentFinance;
         public int Money => currentMoney;
         public List<ActionData_SO> SelectedActivities => selectedActivities;
         public SceneTransition SceneTransition => sceneTransition;
@@ -44,7 +42,6 @@ namespace DefaultNamespace
 
                 initialHealth  = currentHealth;
                 initialStress  = currentStress;
-                initialFinance = currentFinance;
                 initialMoney   = currentMoney;
             }
             else
@@ -59,7 +56,6 @@ namespace DefaultNamespace
         {
             currentHealth  = initialHealth;
             currentStress  = initialStress;
-            currentFinance = initialFinance;
             currentMoney   = initialMoney;
             currentActivity = null;
             selectedActivities.Clear();
@@ -94,18 +90,16 @@ namespace DefaultNamespace
 
             currentMoney -= actionData.MoneyCost;
 
-            currentFinance += actionData.Finance;
             currentHealth += actionData.Health;
             currentStress += actionData.Stress;
 
             currentHealth = Mathf.Clamp(currentHealth, 0, 100);
             currentStress = Mathf.Clamp(currentStress, 0, 100);
-            currentFinance = Mathf.Clamp(currentFinance, 0, 100);
 
             selectedActivities.Add(actionData);
 
             onActivityApplied.RaiseEvent(actionData);
-            Debug.Log($"Applied activity: {actionData.ActivityName}. Stats - Finance: {currentFinance}, Health: {currentHealth}, Stress: {currentStress}");
+            Debug.Log($"Applied activity: {actionData.ActivityName}. Stats - Health: {currentHealth}, Stress: {currentStress}, Money: {currentMoney}");
         }
 
         public void RemoveActivity(ActionData_SO actionData)
@@ -134,7 +128,6 @@ namespace DefaultNamespace
             }
 
             // Save current stats
-            PlayerPrefs.SetInt("PlayerFinance", currentFinance);
             PlayerPrefs.SetInt("PlayerHealth", currentHealth);
             PlayerPrefs.SetInt("PlayerStress", currentStress);
             PlayerPrefs.SetInt("PlayerMoney", currentMoney);
@@ -163,7 +156,6 @@ namespace DefaultNamespace
             }
 
             // Load stats
-            currentFinance = PlayerPrefs.GetInt("PlayerFinance", 100);
             currentHealth = PlayerPrefs.GetInt("PlayerHealth", 100);
             currentStress = PlayerPrefs.GetInt("PlayerStress", 0);
             currentMoney = PlayerPrefs.GetInt("PlayerMoney", 1000);

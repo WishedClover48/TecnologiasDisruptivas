@@ -32,11 +32,12 @@ public static class GameResultEvaluator
     private static readonly Color MidColor  = new Color(0.96f, 0.75f, 0.06f);
     private static readonly Color BadColor  = new Color(0.92f, 0.25f, 0.20f);
 
-    public static Result Evaluate(int health, int stress, int finance)
+    public static Result Evaluate(int health, int stress, int money, int idealMoney)
     {
-        int mental = Mathf.Clamp(100 - stress, 0, 100);
+        int mental     = Mathf.Clamp(100 - stress, 0, 100);
+        int moneyScore = Mathf.RoundToInt(Mathf.Clamp01((float)money / Mathf.Max(idealMoney, 1)) * 100f);
 
-        int finalScore = Mathf.RoundToInt((health + mental + finance) / 3f);
+        int finalScore = Mathf.RoundToInt((health + mental + moneyScore) / 3f);
 
         var result = new Result { FinalScore = finalScore };
 
@@ -84,12 +85,12 @@ public static class GameResultEvaluator
 
         result.Dimensions.Add(new Dimension
         {
-            Label   = "Finanzas",
-            Score   = finance,
-            Comment = Band(finance,
-                "Tu situación financiera quedó sólida.",
-                "Tus finanzas quedaron estables pero ajustadas.",
-                "Tus finanzas quedaron en mal estado.")
+            Label   = "Dinero",
+            Score   = moneyScore,
+            Comment = Band(moneyScore,
+                $"Terminaste con ${money}. Manejaste muy bien tu dinero.",
+                $"Terminaste con ${money}. Tu dinero quedó justo.",
+                $"Terminaste con ${money}. Te quedaste con muy poco dinero.")
         });
 
         result.Summary = BuildSummary(result.Dimensions);
