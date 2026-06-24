@@ -17,7 +17,7 @@ public class ShowOnCanvas : MonoBehaviour
     {
         _actionData = _activity.GetActivity();
 
-        _money.text = TranslateActionDatatoString(_actionData.MoneyCost);
+        _money.text = TranslateActionDatatoString(-1 * _actionData.MoneyCost);
         _hours.text = TranslateActionDatatoString(_actionData.TimeCost);
         _stress.text = TranslateActionDatatoString(_actionData.Stress);
         _health.text = TranslateActionDatatoString(_actionData.Health);
