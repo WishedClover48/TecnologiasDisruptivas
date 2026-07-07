@@ -281,6 +281,7 @@ MonoBehaviour:
   mentalHealthBar: {fileID: 5943346135097314013}
   financeBar: {fileID: 5886609532369584343}
   moneyLabel: {fileID: 7287344843811706686}
+  idealMoney: 50
   history: {fileID: 1018698292795093767}
   onDayEnd: {fileID: 11400000, guid: 79f1b987be866584b998c6425d0e0c95, type: 2}
   onActivityApplied: {fileID: 11400000, guid: 60fa87abbf62e1e46a2d881b30596245, type: 2}
@@ -434,7 +435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u25C8"
+  m_text: $
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1428,7 +1429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PhoneStatBar
   statBarMaterial: {fileID: 2100000, guid: 12cfd7c899239584795e99bd69e244aa, type: 2}
   valueLabel: {fileID: 5213049025619401755}
-  highColor: {r: 0.654902, g: 0.54509807, b: 0.98039216, a: 1}
+  highColor: {r: 0.18039216, g: 0.8, b: 0.44313726, a: 1}
   midColor: {r: 0.9607843, g: 0.61960787, b: 0.043137256, a: 1}
   lowColor: {r: 0.9372549, g: 0.26666668, b: 0.26666668, a: 1}
   lowThreshold: 0.3
@@ -2142,7 +2143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u25C9"
+  m_text: :D
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6207,6 +6208,7 @@ GameObject:
   - component: {fileID: 327790643843897607}
   - component: {fileID: 3289574487319787343}
   - component: {fileID: 3221642140407166484}
+  - component: {fileID: 4414110438274023122}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -6435,7 +6437,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_PhoneGrab
   phoneScreen: {fileID: 4544564653140045246}
-  hideWhenNotGrabbed: 1
+  hideWhenNotGrabbed: 0
+--- !u!114 &4414110438274023122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917674783356898701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baed3e011583e1844a6e85b1cd0657f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.HandGrab.DistanceHandGrabInteractable
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 1839573890677746153}
+  _rigidbody: {fileID: 1044421784876057036}
+  _physicsGrabbable: {fileID: 0}
+  _resetGrabOnGrabsUpdated: 1
+  _slippiness: 0
+  _supportedGrabTypes: 3
+  _pinchGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 1
+    _middleRequirement: 1
+    _ringRequirement: 0
+    _pinkyRequirement: 0
+    _unselectMode: 0
+  _palmGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 2
+    _middleRequirement: 2
+    _ringRequirement: 2
+    _pinkyRequirement: 1
+    _unselectMode: 0
+  _movementProvider: {fileID: 0}
+  _handAligment: 1
+  _handGrabPoses: []
 --- !u!1 &8359993919672196578
 GameObject:
   m_ObjectHideFlags: 0

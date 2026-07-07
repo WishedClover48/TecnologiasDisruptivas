@@ -1187,6 +1187,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: da410d2f5798cea49b61f1b014c1101e, type: 3}
   m_PrefabInstance: {fileID: 658392999}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &207552765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207552756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baed3e011583e1844a6e85b1cd0657f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.HandGrab.DistanceHandGrabInteractable
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 0}
+  _rigidbody: {fileID: 207552760}
+  _physicsGrabbable: {fileID: 0}
+  _resetGrabOnGrabsUpdated: 1
+  _slippiness: 0
+  _supportedGrabTypes: 3
+  _pinchGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 1
+    _middleRequirement: 1
+    _ringRequirement: 0
+    _pinkyRequirement: 0
+    _unselectMode: 0
+  _palmGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 2
+    _middleRequirement: 2
+    _ringRequirement: 2
+    _pinkyRequirement: 1
+    _unselectMode: 0
+  _movementProvider: {fileID: 0}
+  _handAligment: 1
+  _handGrabPoses: []
 --- !u!1 &209101395
 GameObject:
   m_ObjectHideFlags: 0
@@ -4247,6 +4286,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6551801671a20246bd68d36a632c81b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 809052979}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6551801671a20246bd68d36a632c81b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 809052987}
   m_SourcePrefab: {fileID: 100100000, guid: d6551801671a20246bd68d36a632c81b, type: 3}
 --- !u!1001 &658392999
 PrefabInstance:
@@ -4335,6 +4377,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: da410d2f5798cea49b61f1b014c1101e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 207552757}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: da410d2f5798cea49b61f1b014c1101e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 207552765}
   m_SourcePrefab: {fileID: 100100000, guid: da410d2f5798cea49b61f1b014c1101e, type: 3}
 --- !u!1 &673906027
 GameObject:
@@ -5663,6 +5708,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6551801671a20246bd68d36a632c81b, type: 3}
   m_PrefabInstance: {fileID: 652429110}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &809052987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809052978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baed3e011583e1844a6e85b1cd0657f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.HandGrab.DistanceHandGrabInteractable
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 0}
+  _rigidbody: {fileID: 809052982}
+  _physicsGrabbable: {fileID: 0}
+  _resetGrabOnGrabsUpdated: 1
+  _slippiness: 0
+  _supportedGrabTypes: 3
+  _pinchGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 1
+    _middleRequirement: 1
+    _ringRequirement: 0
+    _pinkyRequirement: 0
+    _unselectMode: 0
+  _palmGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 2
+    _middleRequirement: 2
+    _ringRequirement: 2
+    _pinkyRequirement: 1
+    _unselectMode: 0
+  _movementProvider: {fileID: 0}
+  _handAligment: 1
+  _handGrabPoses: []
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -10530,6 +10614,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f9011d0162021214ba05ac1edf95c77c, type: 3}
   m_PrefabInstance: {fileID: 1660657124}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1502178736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502178727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baed3e011583e1844a6e85b1cd0657f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.HandGrab.DistanceHandGrabInteractable
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 0}
+  _rigidbody: {fileID: 1502178731}
+  _physicsGrabbable: {fileID: 0}
+  _resetGrabOnGrabsUpdated: 1
+  _slippiness: 0
+  _supportedGrabTypes: 3
+  _pinchGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 1
+    _middleRequirement: 1
+    _ringRequirement: 0
+    _pinkyRequirement: 0
+    _unselectMode: 0
+  _palmGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 2
+    _middleRequirement: 2
+    _ringRequirement: 2
+    _pinkyRequirement: 1
+    _unselectMode: 0
+  _movementProvider: {fileID: 0}
+  _handAligment: 1
+  _handGrabPoses: []
 --- !u!1 &1519494392
 GameObject:
   m_ObjectHideFlags: 0
@@ -10706,6 +10829,10 @@ PrefabInstance:
       propertyPath: _centerEyeCamera
       value: 
       objectReference: {fileID: 447298121}
+    - target: {fileID: 1168042863143544391, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2336446269904782542, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _leftEyeAnchor
       value: 
@@ -10778,6 +10905,10 @@ PrefabInstance:
       propertyPath: _ovrCameraRig
       value: 
       objectReference: {fileID: 1722805248}
+    - target: {fileID: 8839895569409382208, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11857,6 +11988,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9011d0162021214ba05ac1edf95c77c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1502178728}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9011d0162021214ba05ac1edf95c77c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1502178736}
   m_SourcePrefab: {fileID: 100100000, guid: f9011d0162021214ba05ac1edf95c77c, type: 3}
 --- !u!1 &1661139687
 GameObject:
@@ -12321,7 +12455,7 @@ MonoBehaviour:
   AllowRecenter: 1
   LateControllerUpdate: 1
   LateLatching: 0
-  controllerDrivenHandPosesType: 0
+  controllerDrivenHandPosesType: 1
   SimultaneousHandsAndControllersEnabled: 0
   _readOnlyWideMotionModeHandPosesEnabled: 0
   wideMotionModeHandPosesEnabled: 0
@@ -12559,7 +12693,7 @@ Transform:
   m_GameObject: {fileID: 1747453825}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.26, y: -0.118, z: -4.724}
+  m_LocalPosition: {x: -2.26, y: -0.064, z: -4.724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
