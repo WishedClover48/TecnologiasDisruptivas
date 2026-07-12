@@ -22,7 +22,11 @@ public class DumbbellRepCounter : MonoBehaviour
     [SerializeField] private float _loweredTolerance = 0.12f;
     [SerializeField] private bool _allowKeyboardDebug;
     [SerializeField] private UnityEvent _onCompleted;
-
+    [Header("Rep Origin")]
+    [SerializeField] private Transform _repOrigin;
+    [SerializeField] private float _repOriginHeightOffset = 0f;
+    [SerializeField] private bool _followRepOrigin = true;
+    
     public event Action<DumbbellRepCounter, bool, ExerciseHand> GrabStateChanged;
     public event Action<DumbbellRepCounter, int, int> RepChanged;
     public event Action<DumbbellRepCounter> SetCompleted;
@@ -129,7 +133,7 @@ public class DumbbellRepCounter : MonoBehaviour
             return;
         }
 
-        float relativeHeight = _trackedObject.position.y - _baselineHeight;
+        float relativeHeight = _trackedObject.position.y - GetRepBaselineHeight();
 
         if (!_waitingForLower && relativeHeight >= _liftHeight)
         {
@@ -143,6 +147,34 @@ public class DumbbellRepCounter : MonoBehaviour
         }
     }
 
+    public void SetRepOrigin(Transform repOrigin, float heightOffset = 0f)
+    {
+        _repOrigin = repOrigin;
+        _repOriginHeightOffset = heightOffset;
+        CaptureBaseline();
+    }
+
+    private void CaptureBaseline()
+    {
+        if (_repOrigin != null)
+        {
+            _baselineHeight = _repOrigin.position.y + _repOriginHeightOffset;
+            return;
+        }
+
+        _baselineHeight = _trackedObject != null ? _trackedObject.position.y : transform.position.y;
+    }
+
+    private float GetRepBaselineHeight()
+    {
+        if (_repOrigin != null && _followRepOrigin)
+        {
+            return _repOrigin.position.y + _repOriginHeightOffset;
+        }
+
+        return _baselineHeight;
+    }
+    
     [ContextMenu("Reset Workout")]
     public void ResetWorkout()
     {
@@ -151,7 +183,7 @@ public class DumbbellRepCounter : MonoBehaviour
         _waitingForLower = false;
         _isGrabbed = false;
         _holdingHand = ExerciseHand.Any;
-        _baselineHeight = _trackedObject != null ? _trackedObject.position.y : transform.position.y;
+        CaptureBaseline();
         UpdateStatus("Grab the dumbbell");
         UpdateProgress();
         SetUiVisible(false);
@@ -183,7 +215,7 @@ public class DumbbellRepCounter : MonoBehaviour
     {
         _isGrabbed = true;
         _holdingHand = hand;
-        _baselineHeight = _trackedObject.position.y;
+        CaptureBaseline();
         _waitingForLower = false;
         SetUiVisible(false);
         UpdateStatus(IsHoldingWithRequiredHand() ? "Lift up" : $"Use your {HandToText(_requiredHand)} hand");
