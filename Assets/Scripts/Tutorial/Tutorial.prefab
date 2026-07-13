@@ -66,6 +66,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8051888621362077122, guid: 75aa92af8f8ff1b448b9309d5e2f5a91, type: 3}
+      propertyPath: m_text
+      value: Manten presionado para iniciar la actividad
+      objectReference: {fileID: 0}
     - target: {fileID: 9206130693435477919, guid: 75aa92af8f8ff1b448b9309d5e2f5a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.85
@@ -155,6 +159,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8051888621362077122, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
+      propertyPath: m_text
+      value: Usa el telefono para mirar tus estadisticas
+      objectReference: {fileID: 0}
     - target: {fileID: 9206130693435477919, guid: 93a354a461fa0dc4abd0f57c95a70bf4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.4
@@ -224,6 +232,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2494176245373831760}
     m_Modifications:
+    - target: {fileID: 2077171072742736753, guid: 1720e07d87023ed49b757a8c1a4c4305, type: 3}
+      propertyPath: m_text
+      value: VIDA INDEPENDIENTE
+      objectReference: {fileID: 0}
     - target: {fileID: 4274101534794104321, guid: 1720e07d87023ed49b757a8c1a4c4305, type: 3}
       propertyPath: m_Name
       value: Welcome Tutorial
@@ -231,6 +243,10 @@ PrefabInstance:
     - target: {fileID: 4274101534794104321, guid: 1720e07d87023ed49b757a8c1a4c4305, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051888621362077122, guid: 1720e07d87023ed49b757a8c1a4c4305, type: 3}
+      propertyPath: m_text
+      value: 'Bienvenido a '
       objectReference: {fileID: 0}
     - target: {fileID: 9206130693435477919, guid: 1720e07d87023ed49b757a8c1a4c4305, type: 3}
       propertyPath: m_LocalPosition.x
