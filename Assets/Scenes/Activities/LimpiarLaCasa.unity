@@ -10217,9 +10217,21 @@ PrefabInstance:
       value: Apartment
       objectReference: {fileID: 0}
     - target: {fileID: 6848324298021371101, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848324298021371101, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5dea4e56bd100804e9fbe0c4703553da, type: 2}
+    - target: {fileID: 7221459339300607358, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247994413960396516, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8247994413960396516, guid: 30b22691d3091e649b12df012f3ecb0c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -13525,6 +13537,7 @@ MonoBehaviour:
   placeInFrontOfPlayer: 0
   spawnDistance: 1.6
   heightOffset: 0
+  facePlayer: 1
   showOnStart: 1
   pauseWhileShown: 0
   enableOnAcknowledge:
