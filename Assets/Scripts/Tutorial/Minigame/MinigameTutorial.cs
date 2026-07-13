@@ -23,6 +23,8 @@ public class MinigameTutorial : MonoBehaviour
     [SerializeField] private bool placeInFrontOfPlayer = true;
     [SerializeField] private float spawnDistance = 1.6f;
     [SerializeField] private float heightOffset  = 0f;
+    [Tooltip("El panel queda fijo en su lugar pero rota sobre su eje Y para mirar al jugador.")]
+    [SerializeField] private bool facePlayer = true;
 
     [Header("Flow")]
     [SerializeField] private bool showOnStart = true;
@@ -32,6 +34,21 @@ public class MinigameTutorial : MonoBehaviour
 
     private bool acknowledged;
     private bool videoReady;
+    private Transform camCache;
+
+    private void LateUpdate()
+    {
+        if (!facePlayer || panelRoot == null || !panelRoot.activeSelf) return;
+
+        if (camCache == null) camCache = ResolveCameraTransform();
+        if (camCache == null) return;
+
+        Vector3 dir = panelRoot.transform.position - camCache.position;
+        dir.y = 0f;
+        if (dir.sqrMagnitude < 0.0001f) return;
+
+        panelRoot.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+    }
 
     private void Awake()
     {
