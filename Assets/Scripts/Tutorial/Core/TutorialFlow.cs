@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using UnityEngine;
 
 public class TutorialFlow : MonoBehaviour
@@ -6,10 +7,12 @@ public class TutorialFlow : MonoBehaviour
     [SerializeField] private ActivityTutorial activityTutorial;
     [SerializeField] private PhoneTutorial phoneTutorial;
 
-    private static bool hasShownWelcome;
+    public static bool hasShownWelcome;
 
-    private void Start()
+    private void Awake()
     {
+        if(PlayerManager.Instance.tutorialCompleted)
+            return;
         if (hasShownWelcome)
         {
             OnWelcomeComplete();

@@ -17,6 +17,8 @@ namespace DefaultNamespace
 
         [Space]
         [SerializeField] private SceneTransition sceneTransition;
+
+        public bool tutorialCompleted;
         
         private DayTimeManager dayTimeManager;
         private ActionData_SO currentActivity;
@@ -64,6 +66,7 @@ namespace DefaultNamespace
         private void Start()
         {
             dayTimeManager=DayTimeManager.Instance;
+            tutorialCompleted = true;
         }
         public ActionData_SO CurrentActivity {  get => currentActivity; set => currentActivity = value; }
 
