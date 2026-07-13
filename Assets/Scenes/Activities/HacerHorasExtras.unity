@@ -20187,6 +20187,7 @@ MonoBehaviour:
   placeInFrontOfPlayer: 0
   spawnDistance: 1.6
   heightOffset: 0
+  facePlayer: 1
   showOnStart: 1
   pauseWhileShown: 0
   enableOnAcknowledge:

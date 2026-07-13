@@ -23,6 +23,8 @@ public class UI_GameEndFeedback : MonoBehaviour
     [Header("Placement")]
     [SerializeField] private float spawnDistance = 1.5f;
     [SerializeField] private float heightOffset  = -0.1f;
+    [Tooltip("El panel queda fijo pero rota sobre su eje Y para mirar al jugador.")]
+    [SerializeField] private bool facePlayer = true;
 
     [Header("Spot fijo de fin de juego (opcional)")]
     [Tooltip("Si se asigna, al terminar el juego el panel aparece SIEMPRE acá (no frente a la mirada) " +
@@ -40,11 +42,26 @@ public class UI_GameEndFeedback : MonoBehaviour
     [SerializeField] private GameObject[] hideWhileShown;
 
     private bool shown;
+    private Transform camCache;
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
         if (panelRoot != null) panelRoot.SetActive(false);
+    }
+
+    private void LateUpdate()
+    {
+        if (!facePlayer || panelRoot == null || !panelRoot.activeSelf) return;
+
+        if (camCache == null) camCache = ResolveCameraTransform();
+        if (camCache == null) return;
+
+        Vector3 dir = panelRoot.transform.position - camCache.position;
+        dir.y = 0f;
+        if (dir.sqrMagnitude < 0.0001f) return;
+
+        panelRoot.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
     }
 
     private void OnEnable()
