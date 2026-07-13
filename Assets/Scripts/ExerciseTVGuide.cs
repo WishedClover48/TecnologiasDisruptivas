@@ -12,7 +12,7 @@ public class ExerciseTVGuide : MonoBehaviour
     public class ExerciseTarget
     {
         public DumbbellRepCounter Dumbbell;
-        public string ObjectName = "blue dumbbell";
+        public string ObjectName = "mancuerna";
         public ExerciseHand RequiredHand = ExerciseHand.Right;
         public int TargetReps = 10;
 
@@ -25,10 +25,10 @@ public class ExerciseTVGuide : MonoBehaviour
     [Serializable]
     public class ExercisePhase
     {
-        [TextArea] public string StartMessage = "Grab the blue dumbbell with your right hand.";
-        public string CounterFormat = "{hand} hand: {reps}/{target} reps";
-        [TextArea] public string ReleasedMessage = "Pick up the {object} with your {hand} hand.";
-        [TextArea] public string WrongHandMessage = "Use your {hand} hand for the {object}.";
+        [TextArea] public string StartMessage = "Agarra la mancuerna con tu mano derecha.";
+        public string CounterFormat = "{hand} mano: {reps}/{target} repeticiones";
+        [TextArea] public string ReleasedMessage = "Agarra la mancuerna con tu {hand} mano.";
+        [TextArea] public string WrongHandMessage = "Usa tu otra mano.";
         public ExerciseTarget[] Targets;
     }
 
@@ -36,7 +36,7 @@ public class ExerciseTVGuide : MonoBehaviour
     [SerializeField] private TMP_Text _messageText;
     [SerializeField] private GameObject _displayRoot;
     [SerializeField] private ExercisePhase[] _phases;
-    [SerializeField, TextArea] private string _completeMessage = "Exercise complete.";
+    [SerializeField, TextArea] private string _completeMessage = "Ejercicio completado.";
     [SerializeField] private bool _createDefaultTvIfMissing = true;
     [SerializeField] private bool _beginOnEnable;
     [SerializeField] private bool _hideDisplayUntilStarted = true;
@@ -46,7 +46,7 @@ public class ExerciseTVGuide : MonoBehaviour
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private Transform _exerciseCircleCenter;
     [SerializeField] private float _exerciseCircleRadius = 0.85f;
-    [SerializeField, TextArea] private string _outsideCircleMessage = "Stand in the circle in front of the TV.";
+    [SerializeField, TextArea] private string _outsideCircleMessage = "Parate en el circulo frente a la TV";
 
     private int _currentPhaseIndex;
     private bool _exerciseRunning;
@@ -352,11 +352,11 @@ public class ExerciseTVGuide : MonoBehaviour
         switch (hand)
         {
             case ExerciseHand.Left:
-                return "left";
+                return "izquierda";
             case ExerciseHand.Right:
-                return "right";
+                return "derecha";
             default:
-                return "either";
+                return "cualquiera";
         }
     }
 
@@ -530,12 +530,12 @@ public class ExerciseTVGuide : MonoBehaviour
         {
             new ExercisePhase
             {
-                StartMessage = "Grab the blue dumbbell with your right hand.",
+                StartMessage = "Agarra la mancuerna con tu mano derecha.",
                 Targets = new[]
                 {
                     new ExerciseTarget
                     {
-                        ObjectName = "blue dumbbell",
+                        ObjectName = "mancuerna",
                         RequiredHand = ExerciseHand.Right,
                         TargetReps = 10
                     }
@@ -543,12 +543,12 @@ public class ExerciseTVGuide : MonoBehaviour
             },
             new ExercisePhase
             {
-                StartMessage = "Grab the blue dumbbell with your left hand.",
+                StartMessage = "Agarra la mancuerna con tu mano izquierda.",
                 Targets = new[]
                 {
                     new ExerciseTarget
                     {
-                        ObjectName = "blue dumbbell",
+                        ObjectName = "mancuerna",
                         RequiredHand = ExerciseHand.Left,
                         TargetReps = 10
                     }

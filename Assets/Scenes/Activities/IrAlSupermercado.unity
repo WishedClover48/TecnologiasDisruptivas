@@ -19552,6 +19552,7 @@ MonoBehaviour:
   placeInFrontOfPlayer: 0
   spawnDistance: 1.6
   heightOffset: 0
+  facePlayer: 1
   showOnStart: 1
   pauseWhileShown: 0
   enableOnAcknowledge:
@@ -24922,6 +24923,10 @@ PrefabInstance:
       propertyPath: _leftEyeAnchor
       value: 
       objectReference: {fileID: 932247027}
+    - target: {fileID: 435407831072319256, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: _planeDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 435407831072319256, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _rightEyeAnchor
       value: 

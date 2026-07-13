@@ -5792,6 +5792,7 @@ MonoBehaviour:
   placeInFrontOfPlayer: 0
   spawnDistance: 1.6
   heightOffset: 0
+  facePlayer: 1
   showOnStart: 1
   pauseWhileShown: 0
   enableOnAcknowledge:
@@ -13577,12 +13578,12 @@ MonoBehaviour:
   - {fileID: 1690782583}
   - {fileID: 1326569059}
   empresas:
-  - Rara
-  - santander
+  - Aysa
+  - Santander
   - Metrogas
-  - edesur
-  - Pepito
-  - manco
+  - Edesur
+  - Edenor
+  - ABL
   PaperPositions:
   - {fileID: 848492560}
   - {fileID: 497173998}
@@ -13754,6 +13755,10 @@ PrefabInstance:
       propertyPath: _leftEyeAnchor
       value: 
       objectReference: {fileID: 932247027}
+    - target: {fileID: 435407831072319256, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: _planeDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 435407831072319256, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _rightEyeAnchor
       value: 

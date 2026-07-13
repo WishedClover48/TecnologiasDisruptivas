@@ -232,6 +232,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2494176245373831760}
     m_Modifications:
+    - target: {fileID: 294660816437615556, guid: 1720e07d87023ed49b757a8c1a4c4305, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 2077171072742736753, guid: 1720e07d87023ed49b757a8c1a4c4305, type: 3}
       propertyPath: m_text
       value: VIDA INDEPENDIENTE

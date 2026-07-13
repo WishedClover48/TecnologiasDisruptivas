@@ -6232,6 +6232,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 416934280}
     - target: {fileID: 435407831072319256, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: _planeDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435407831072319256, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _rightEyeAnchor
       value: 
       objectReference: {fileID: 333014135}
