@@ -1220,6 +1220,14 @@ PrefabInstance:
       propertyPath: _repOriginHeightOffset
       value: -0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4269793424850928542, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269793424850928542, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37ec96321c756a8429af95ea26c62119, type: 2}
     - target: {fileID: 5080885892441938733, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: m_Name
       value: Red Dumbel
@@ -6543,7 +6551,7 @@ MonoBehaviour:
   m_modelMetaTouchProRightController: {fileID: 331201897}
   m_modelMetaTouchPlusLeftController: {fileID: 1627754931}
   m_modelMetaTouchPlusRightController: {fileID: 240480422}
-  m_controller: 1
+  m_controller: 96
   m_showState: 1
   showWhenHandsArePoweredByNaturalControllerPoses: 0
   RayHelper: {fileID: 0}
@@ -6882,9 +6890,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4269793424850928542, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269793424850928542, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269793424850928542, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 098ac44ad80ff944c9bae1d02f8a5a83, type: 2}
+    - target: {fileID: 4269793424850928542, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37ec96321c756a8429af95ea26c62119, type: 2}
     - target: {fileID: 4298221156935050228, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.297
@@ -8392,10 +8412,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 764037620465467968, guid: 0c783da986a9ba945a04853477fcf0e0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 764037620465467968, guid: 0c783da986a9ba945a04853477fcf0e0, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37ec96321c756a8429af95ea26c62119, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c783da986a9ba945a04853477fcf0e0, type: 3}
       propertyPath: m_Name
       value: low-poly_modern_laptop_with_closing_animation
       objectReference: {fileID: 0}
+    - target: {fileID: 6228250124168165117, guid: 0c783da986a9ba945a04853477fcf0e0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228250124168165117, guid: 0c783da986a9ba945a04853477fcf0e0, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37ec96321c756a8429af95ea26c62119, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9974,7 +10010,7 @@ Transform:
   m_GameObject: {fileID: 958210418}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.79}
+  m_LocalPosition: {x: 2.174, y: 0.623, z: -4.79}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12970,6 +13006,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2121009191027218360, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: _transferOnSecondSelection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2181440394139225922, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14507,7 +14547,7 @@ MonoBehaviour:
   m_modelMetaTouchProRightController: {fileID: 275115829}
   m_modelMetaTouchPlusLeftController: {fileID: 1059281097}
   m_modelMetaTouchPlusRightController: {fileID: 1722893706}
-  m_controller: 2
+  m_controller: 96
   m_showState: 1
   showWhenHandsArePoweredByNaturalControllerPoses: 0
   RayHelper: {fileID: 0}
@@ -18199,7 +18239,7 @@ MonoBehaviour:
   LateControllerUpdate: 1
   LateLatching: 0
   controllerDrivenHandPosesType: 1
-  SimultaneousHandsAndControllersEnabled: 0
+  SimultaneousHandsAndControllersEnabled: 1
   _readOnlyWideMotionModeHandPosesEnabled: 0
   wideMotionModeHandPosesEnabled: 0
   _readOnlyFastMotionModeHandPosesEnabled: 0
@@ -21403,6 +21443,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: -2559379786127522770, guid: 193fb1e0c3b852848937952c36dc57d3, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2559379786127522770, guid: 193fb1e0c3b852848937952c36dc57d3, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37ec96321c756a8429af95ea26c62119, type: 2}
+    - target: {fileID: -840463749691948842, guid: 193fb1e0c3b852848937952c36dc57d3, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -840463749691948842, guid: 193fb1e0c3b852848937952c36dc57d3, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37ec96321c756a8429af95ea26c62119, type: 2}
+    - target: {fileID: -769325940149953505, guid: 193fb1e0c3b852848937952c36dc57d3, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -769325940149953505, guid: 193fb1e0c3b852848937952c36dc57d3, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37ec96321c756a8429af95ea26c62119, type: 2}
     - target: {fileID: 919132149155446097, guid: 193fb1e0c3b852848937952c36dc57d3, type: 3}
       propertyPath: m_Name
       value: FILE_Maleta_LP
@@ -22044,6 +22108,10 @@ PrefabInstance:
     - target: {fileID: 1369720336634316461, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121009191027218360, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
+      propertyPath: _transferOnSecondSelection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2181440394139225922, guid: 76cedbe017ca3be42a74f42cb4f8aacc, type: 3}
       propertyPath: m_AnchorMax.y
@@ -23897,9 +23965,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 819786ae087ba5144a6406b1f37be08b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 819786ae087ba5144a6406b1f37be08b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 81dfc2b8600241a4e9710def9cf74302, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 819786ae087ba5144a6406b1f37be08b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 37ec96321c756a8429af95ea26c62119, type: 2}
     - target: {fileID: 919132149155446097, guid: 819786ae087ba5144a6406b1f37be08b, type: 3}
       propertyPath: m_Name
       value: PaperBall
