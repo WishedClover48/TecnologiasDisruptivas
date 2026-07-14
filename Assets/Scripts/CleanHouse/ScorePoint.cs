@@ -24,6 +24,7 @@ public class ScorePoint : MonoBehaviour
     private void Score(GameObject obj)
     {
         _currentScore++;
+        _objectsToScore.Remove(obj.transform);
         obj.SetActive(false);
         if (_currentScore >= _scoreObjective)
         {
