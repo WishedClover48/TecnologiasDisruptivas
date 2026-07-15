@@ -16505,8 +16505,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: efc256cbc4764c0458a0c9e60599f2f0, type: 2}
     - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
+      propertyPath: _phases.Array.data[0].StartMessage
+      value: Agarra la mancuerna con tu mano derecha
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: _phases.Array.data[1].StartMessage
-      value: Grab the Red dumbbell with your left hand.
+      value: Agarra la mancuerna con tu mano derecha
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
+      propertyPath: _phases.Array.data[0].CounterFormat
+      value: 'mano derecha: {reps}/{target} repeticiones'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
+      propertyPath: _phases.Array.data[1].CounterFormat
+      value: 'mano izquierda: {reps}/{target} repeticiones'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
+      propertyPath: _phases.Array.data[0].ReleasedMessage
+      value: Agarra la mancuerna
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
+      propertyPath: _phases.Array.data[1].ReleasedMessage
+      value: Agarra la mancuerna
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
+      propertyPath: _phases.Array.data[0].WrongHandMessage
+      value: Agarra la mancuerna con tu otra mano
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
+      propertyPath: _phases.Array.data[1].WrongHandMessage
+      value: Agarra la mancuerna con tu otra mano
       objectReference: {fileID: 0}
     - target: {fileID: 6031998526366107742, guid: 0aff53d157a244899d29f9557e321dca, type: 3}
       propertyPath: _phases.Array.data[0].Targets.Array.data[0].Dumbbell
